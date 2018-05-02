@@ -6,9 +6,8 @@ angular.module("KeepUp").factory("AuthFactory", ($http) => {
 
     return {
         createUser(userObj) {
-            console.log("user obj", userObj);
             return $http.post("/register", userObj).then(userData => {
-                console.log("new user added", userData.data);
+                // console.log("new user added", userData.data);
                 currentUser = userData;
                 return userData.data;
             });

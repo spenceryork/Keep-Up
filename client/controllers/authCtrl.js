@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("KeepUp").controller("AuthCtrl", function ($scope, AuthFactory) {
+angular.module("KeepUp").controller("AuthCtrl", function ($scope, $location, AuthFactory) {
     $scope.userAccount = {};
 
     $scope.register = () => {
