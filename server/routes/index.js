@@ -3,4 +3,6 @@
 const { Router } = require('express');
 const router = Router();
 
-app.use(require('./auth-route'));
+router.use(require('./auth-route'));
+
+module.exports = router;

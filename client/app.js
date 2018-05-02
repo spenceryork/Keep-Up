@@ -6,4 +6,5 @@ angular.module('KeepUp', ["ngRoute"]).config($routeProvider => {
             templateUrl: "partials/register.html",
             controller: "AuthCtrl"
         })
+        .otherwise("/");
 })
