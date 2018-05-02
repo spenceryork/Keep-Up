@@ -45,6 +45,8 @@ const RegistrationStrategy = new Strategy(
                 const data =
                     // values come from the req.body, added by body-parser when register form request is submitted
                     {
+                        first_name: req.body.first_name,
+                        last_name: req.body.last_name,
                         email,
                         password: userPassword,
                         username: req.body.username
