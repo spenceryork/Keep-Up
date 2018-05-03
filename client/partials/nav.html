@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" ng-controller="NavCtrl">
+        <a class="navbar-brand logo" href="#">Keep Up</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto nav justify-content-end">
+                <li class="nav-item" ng-repeat="item in navBar"> 
+                    <!-- <a class="nav-link" ng-click="go(item.url)" ng-show="{{item.bang}}loggedIn" href="{{item.url}}">{{item.name}}</a> -->
+                    <a class="nav-link" ng-click="go(item.url)" href="{{item.url}}">{{item.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>

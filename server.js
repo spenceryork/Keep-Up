@@ -13,6 +13,10 @@ app.use(express.static(__dirname + "/client"));
 
 app.use("/angular", express.static(__dirname + "/node_modules/angular/"));
 app.use("/angular-route", express.static(__dirname + "/node_modules/angular-route/"));
+app.use("/bootstrap", express.static(__dirname + "/node_modules/bootstrap/"));
+app.use("/jquery", express.static(__dirname + "/node_modules/jquery/"));
+
+
 
 app.use(session({
     secret: "keyboard cat",
