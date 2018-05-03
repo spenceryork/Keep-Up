@@ -39,7 +39,7 @@ angular.module("KeepUp").factory("AuthFactory", ($q, $http, $rootScope) => {
             return $http
                 .get("/status")
                 .then(user => {
-                    console.log("user in set user status", user);
+                    // console.log("user in set user status", user);
 
                     if (user) {
                         currentUser = user.data;
@@ -53,7 +53,6 @@ angular.module("KeepUp").factory("AuthFactory", ($q, $http, $rootScope) => {
         },
 
         broadcastUserLogin(user) {
-            console.log("calling broadcast", user);
             $rootScope.$broadcast("handleBroadcast", user);
         }
     };

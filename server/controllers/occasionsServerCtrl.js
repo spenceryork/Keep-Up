@@ -1,9 +1,9 @@
 "use strict";
 
-module.exports.addNewOccasion = ({ app, body: { title, date, budget } }, res, next) => {
+module.exports.addNewOccasion = ({ app, body: { user_id, title, date, budget } }, res, next) => {
     console.log("what is the req app?", app);
     let Occasion = app.get("models").Occasion;
-    Occasion.create({ title, date, budget })
+    Occasion.create({ user_id, title, date, budget })
     .then(() => {
         res.status(201).end();
     })
@@ -11,18 +11,6 @@ module.exports.addNewOccasion = ({ app, body: { title, date, budget } }, res, ne
         next(error)
     })
 }
-
-// module.exports.addNewOccasion = (req, res, next) => {
-//     console.log("what is the req?", req);
-//     let Occasion = app.get("models").Occasion;
-//     Occasion.create({ title, date, budget })
-//     .then(() => {
-//         res.status(201).end();
-//     })
-//     .catch(error => {
-//         next(error)
-//     })
-// }
 
 module.exports.getOccasions = () => {
 

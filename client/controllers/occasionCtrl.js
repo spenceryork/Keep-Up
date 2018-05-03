@@ -4,16 +4,14 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, OccasionFa
 
     $scope.occasion = {};
 
-    let activeUser = null;
+    $scope.occasion.user_id = null;
 
-    // $scope.$on("handleBroadcast", function (event, user) {
-    //     activeUser = user.id;
-    //     console.log("Active user in occasion ctrl", activeUser);
-    // });
+    $scope.$on("handleBroadcast", function (event, user) {
+        $scope.occasion.user_id = user.id;
+        console.log("Active user in occasion ctrl", user.id);
+    });
 
     $scope.addOccasion = (occasion) => {
-        console.log("occasion to add", occasion);
-        console.log("active user", activeUser);
         OccasionFactory.postOccasion(occasion)
         .then( occasion => {
             console.log("occasion was added to DB", occasion);
