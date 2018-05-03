@@ -14,7 +14,7 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, Oc
     OccasionFactory.getUserOccasions()
     .then( occasions => {
         $scope.occasionList = occasions.data;
-        console.log("users occasions", occasions.data);
+        console.log("users occasionList", $scope.occasionList);
     })
 
     $scope.addOccasion = (occasion) => {
@@ -26,7 +26,11 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, Oc
     }
 
 
-    $scope.getOneOccasions = () => {
+    $scope.getOneOccasion = (occasion_id) => {
+        OccasionsFactory.getOccasion(occasion_id)
+        .then( occastion => {
+            $scope.occasion;
+        })
 
     }
 
