@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("KeepUp").controller("OccasionCtrl", function ($scope, OccasionFactory) {
+angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, OccasionFactory) {
 
     $scope.occasion = {};
 
@@ -10,19 +10,21 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, OccasionFa
         $scope.occasion.user_id = user.id;
         console.log("Active user in occasion ctrl", user.id);
     });
+    
+    OccasionFactory.getUserOccasions()
+    .then( occasions => {
+        $scope.occasionList = occasions.data;
+        console.log("users occasions", occasions.data);
+    })
 
     $scope.addOccasion = (occasion) => {
         OccasionFactory.postOccasion(occasion)
         .then( occasion => {
             console.log("occasion was added to DB", occasion);
+            $route.reload("/occasions");
         })
     }
 
-    OccasionFactory.getUserOccasions()
-    .then( occasions => {
-        $scope.occasions = occasions;
-        console.log("users occasions", occasions);
-    })
 
     $scope.getOneOccasions = () => {
 

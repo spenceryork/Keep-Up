@@ -1,9 +1,4 @@
 <div class="occasionsPageContainer">
-    <div>
-        <h4>Occasions</h4>
-        <a href="/occasions">Upcoming</a>
-        <a href="/past-occasions">Past</a>
-    </div>
     <div class="individualOccContainer">
         <button>ADD</button>
         <div class="addOccasion">
@@ -13,7 +8,19 @@
             <button ng-click="addOccasion(occasion)">ADD OCCASION</button>
         </div>
     </div>
-    <div class "occasionCard">
+    <div>
+        <h4>Occasions</h4>
+        <a href="/occasions">Upcoming</a>
+        <a href="/past-occasions">Past</a>
+    </div>
+    <div class "occasionCard" ng-repeat="occasion in occasionList">
+        <h5>{{occasion.title}}</h5>
+        <h6>{{occasion.date}}</h6>
+        <h6>{{occasion.budget}}</h6>
+        <button>EDIT</button>
+        <button>DELETE</button>
+        
         <!-- TODO: This will need to populate with the users existing occasions. -->
+
     </div>
 </div>
