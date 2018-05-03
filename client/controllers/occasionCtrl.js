@@ -18,6 +18,12 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, OccasionFa
         })
     }
 
+    OccasionFactory.getUserOccasions()
+    .then( occasions => {
+        $scope.occasions = occasions;
+        console.log("users occasions", occasions);
+    })
+
     $scope.getOneOccasions = () => {
 
     }

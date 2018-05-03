@@ -12,8 +12,17 @@ module.exports.addNewOccasion = ({ app, body: { user_id, title, date, budget } }
     })
 }
 
-module.exports.getOccasions = () => {
-
+module.exports.getOccasions = (req, res, next) => {
+    const { Occasion } = req.app.get("models");
+    console.log('is this getting called???????????????????????????');
+    Occasion.findAll({
+        raw: true,
+        where: { user_id: req.user.id }
+    })
+    .then(occasions => {
+        console.log("User's occasions", occasions);
+        res.status(200).json(occasions);
+    });
 }
 
 module.exports.deleteOccasion = () => {
