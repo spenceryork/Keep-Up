@@ -12,6 +12,9 @@ models.sequelize.sync({force: true})
         password: "$2a$08$Mt/H/Edy45mVzrKPWvf29.zD.tACz.ZqqVbBkfcKhjZpqRTlUfGSe"
     })
 })
+.then(()=>{
+    return models.Occasion.create()
+  })
 .then( () => {
     process.exit();
 })

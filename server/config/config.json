@@ -1,6 +1,6 @@
 {
   "development": {
-    "database": "keep_up",
+    "database": "keepup",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

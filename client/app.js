@@ -10,5 +10,9 @@ angular.module('KeepUp', ["ngRoute"]).config($routeProvider => {
             templateUrl: "partials/login.html",
             controller: "AuthCtrl"
         })
+        .when("/occasions", {
+            templateUrl: "partials/occasions.html",
+            controller: "OccasionCtrl"
+        })
         .otherwise("/");
 })
