@@ -1,24 +1,35 @@
 "use strict";
 
-angular.module("KeepUp").controller("OccasionCtrl", function($scope, OccasionFactory) {
+angular.module("KeepUp").controller("OccasionCtrl", function ($scope, OccasionFactory) {
 
-    let occasion = {};
+    $scope.occasion = {};
 
-    $scope.addOccasion = () => {
+    let activeUser = null;
+
+    // $scope.$on("handleBroadcast", function (event, user) {
+    //     activeUser = user.id;
+    //     console.log("Active user in occasion ctrl", activeUser);
+    // });
+
+    $scope.addOccasion = (occasion) => {
         console.log("occasion to add", occasion);
-        OccasionFactory.postOccasion = ({user_id, title, date, budget})
+        console.log("active user", activeUser);
+        OccasionFactory.postOccasion(occasion)
+        .then( occasion => {
+            console.log("occasion was added to DB", occasion);
+        })
     }
 
     $scope.getOneOccasions = () => {
-        
+
     }
 
     $scope.deleteOneOccasion = () => {
-        
+
     }
 
     $scope.editOneOccasion = () => {
-        
+
     }
 
 })
