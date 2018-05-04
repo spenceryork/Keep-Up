@@ -20,7 +20,10 @@ module.exports.getOccasions = (req, res, next) => {
     })
     .then(occasions => {
         res.status(200).json(occasions);
-    });
+    })
+    .catch(error => {
+        next(error)
+    })
 }
 
 module.exports.deleteOccasion = () => {
@@ -31,14 +34,21 @@ module.exports.editOccasion = () => {
 
 }
 
-module.exports.getOneOccasion = (id) => {
+
+
+
+module.exports.getOneOccasion = (req, res, next) => {
+    console.log("what is req.params", req.params)
     const { Occasion } = req.app.get("models");
     Occasion.findOne({
         raw: true,
-        where: { occasion_id: id}
+        where: { id: req.params.id}
     })
     .then( occasion => {
         res(status).json(occasion);
+    })
+    .catch(error => {
+        next(error)
     })
 
 }
