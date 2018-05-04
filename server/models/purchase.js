@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     Purchase.belongsTo(models.Occasion, {
       foreignKey: "occasion_id"
     });
-    // Purchase.belongsTo(models.Recipient, {
-    //   foreignKey: "recipient_id"
-    // });
+    Purchase.belongsTo(models.Recipient, {
+      foreignKey: "recipient_id"
+    });
   };
   return Purchase;
 };
