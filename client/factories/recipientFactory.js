@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("KeepUp").factory("RecipientFactory", ($http) => {
+angular.module("KeepUp").factory("RecipientFactory", function($http) {
 
   
 })

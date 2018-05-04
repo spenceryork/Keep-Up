@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("KeepUp").factory("AuthFactory", ($q, $http, $rootScope) => {
+angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope) {
 
     let currentUser = null;
 

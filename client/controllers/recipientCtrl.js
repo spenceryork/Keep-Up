@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("KeepUp").controller("RecipientCtrl", ($scope) => {
+angular.module("KeepUp").controller("RecipientCtrl", function($scope) {
 
     $scope.occasion.user_id = null;
 
