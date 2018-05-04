@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("KeepUp").controller("PurchaseCtrl", function($scope, PurchaseFactory) {
+angular.module("KeepUp").controller("PurchaseCtrl", function($scope, PurchaseFactory, $route) {
 
     $scope.occasion = {};
     $scope.purchase = {};
@@ -23,20 +23,12 @@ angular.module("KeepUp").controller("PurchaseCtrl", function($scope, PurchaseFac
         console.log("users occasionList in purchase CTRL", $scope.occasionList);
     })
 
-    $scope.addPurchase = () => {
+    $scope.addPurchase = (purchase) => {
         PurchaseFactory.postPurchase(purchase)
         .then( purchase => {
             console.log("purchase that was added to DB");
             $route.reload("/purchases");
-            $().alert('close');
         })
     }
 
-    $scope.addOccasion = (occasion) => {
-        OccasionFactory.postOccasion(occasion)
-        .then( occasion => {
-            console.log("occasion was added to DB", occasion);
-            $route.reload("/occasions");
-        })
-    }
 })
