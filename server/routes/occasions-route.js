@@ -10,7 +10,6 @@ router.post("/occasions", addNewOccasion);
 router.get("/occasions", getOccasions);
 // router.patch("/occasions/:id", editOccasion);
 // router.delete("/occasions", deleteOccasion);
-// router.get("/occasions/:id", getPurchases );
 router.get("/occasions/:id", getOneOccasion );
 
 
