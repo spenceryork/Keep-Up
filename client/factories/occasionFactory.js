@@ -4,7 +4,6 @@ angular.module("KeepUp").factory("OccasionFactory", function($http) {
 
     return {
         postOccasion(occasion) {
-            // console.log("what occasion did I post?", occasion);
             return $http.post('/occasions', occasion);
         },
         getUserOccasions() {
@@ -13,13 +12,12 @@ angular.module("KeepUp").factory("OccasionFactory", function($http) {
         getOccasionDetails(occasion_id) {
             return $http.get(`/occasions/${occasion_id}`)
         },
-        editOccasion(occasion_id) {
-            return $http.patch(`/occasions/${occasion_id}`)
+        patchOccasion(occasion_id, occasion) {
+            return $http.patch(`/occasions/${occasion_id}`, occasion)
         },
         deleteOccasion(occasion_id) {
             return $http.delete(`/occasions/${occasion_id}`)
         }
-
     }
 
 })

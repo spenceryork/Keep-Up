@@ -2,7 +2,7 @@
 
 const { Router } = require("express");
 const router = Router();
-const { addNewOccasion, getOccasions, deleteOccasion, editOccasion, getOneOccasion } = require('../controllers/occasionsServerCtrl');
+const { addNewOccasion, getOccasions, deleteOccasion, updateOccasion, getOneOccasion } = require('../controllers/occasionsServerCtrl');
 const { getPurchases } = require('../controllers/purchasesServerCtrl');
 
 
@@ -11,6 +11,8 @@ router.get("/occasions", getOccasions);
 // router.patch("/occasions/:id", editOccasion);
 // router.delete("/occasions", deleteOccasion);
 router.get("/occasions/:id", getOneOccasion );
+router.patch("/occasions/:id", updateOccasion );
+
 
 
 module.exports = router;

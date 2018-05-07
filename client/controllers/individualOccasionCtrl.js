@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("KeepUp").controller("IndividualOccasionCtrl", function($scope, OccasionFactory, $routeParams, PurchaseFactory) {
+angular.module("KeepUp").controller("IndividualOccasionCtrl", function($scope, OccasionFactory, $routeParams, PurchaseFactory, $route) {
 
     let currentUser = null;
 
@@ -28,6 +28,17 @@ angular.module("KeepUp").controller("IndividualOccasionCtrl", function($scope, O
             $scope.occasion = occasion.data;
             console.log("occasion date", $scope.occasion);
         })
+    }
+
+    $scope.updateOccasion = (occasion_id, occasion) => {
+
+        console.log("occasion to be updated", occasion);
+        OccasionFactory.patchOccasion($routeParams.id, occasion)
+        .then( occasion => {
+            // console.log("occasion was added to DB", occasion);
+            $route.reload(`/occasions/${occasion_id}`);
+        })
+
     }
 
 
