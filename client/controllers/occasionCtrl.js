@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, OccasionFactory) {
+angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $location, $routeParams, OccasionFactory) {
 
     $scope.occasion = {};
 
@@ -26,13 +26,16 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, Oc
     }
 
 
-    $scope.getOneOccasion = (occasion_id) => {
-        OccasionsFactory.getOccasion(occasion_id)
-        .then( occastion => {
-            $scope.occasion;
-        })
+    // $scope.getOneOccasion = (occasion_id) => {
+    //     $location.url(`/occasions/${occasion_id}`);
+    //     OccasionFactory.getOccasionDetails(occasion_id)
+    //     .then( occastion => {
+    //         // console.log("what is the occasion", $scope.occasion);
+    //         console.log("what is the occasion_id", occasion_id);
+    //         // console.log("what is the $routeparams", $routeParams)
+    //     })
 
-    }
+    // }
 
     $scope.deleteOneOccasion = () => {
 

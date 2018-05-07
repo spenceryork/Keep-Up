@@ -13,8 +13,8 @@ angular.module("KeepUp").factory("OccasionFactory", function($http) {
         // getOccasion() {
         //     return $http.get('/occasions/:id');
         // },
-        getOccasionDetails() {
-            return $http.get('/occasions/:id')
+        getOccasionDetails(occasion_id) {
+            return $http.get(`/occasions/${occasion_id}`)
         }
 
     }

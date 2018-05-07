@@ -12,7 +12,7 @@ angular.module("KeepUp").controller("AuthCtrl", function ($scope, $location, Aut
             return null;
         }
         AuthFactory.createUser($scope.userAccount).then(() => {
-            console.log("User created", $scope.userAccount)
+            // console.log("User created", $scope.userAccount)
             $location.path("/");
         });
     };
@@ -20,7 +20,7 @@ angular.module("KeepUp").controller("AuthCtrl", function ($scope, $location, Aut
     $scope.login = () => {
         console.log("scope account?", $scope.userAccount);
         AuthFactory.loginUser($scope.userAccount).then(() => {
-            console.log("logged in controller", AuthFactory.getCurrentUser());
+            // console.log("logged in controller", AuthFactory.getCurrentUser());
             $location.path("/");
         });
     };

@@ -25,7 +25,7 @@ module.exports.register = (req, res, next) => {
             if (err) {
                 return next(err);
             }
-            console.log("authenticated!", user);
+            // console.log("authenticated!", user);
             let currentUser = { first_name: user.first_name, last_name: user.last_name, id: user.id };
             res.status(200).json(currentUser);
         });

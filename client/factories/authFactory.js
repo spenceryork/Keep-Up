@@ -8,7 +8,7 @@ angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope) 
         createUser(userObj) {
             return $q((resolve, reject) => {
                 $http.post("/register", userObj).then(userData => {
-                    console.log("new user added", userData);
+                    // console.log("new user added", userData);
                     currentUser = userData;
                     resolve(userData.data);
                 });
@@ -18,7 +18,7 @@ angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope) 
         },
 
         loginUser(userObj) {
-            console.log("userObj", userObj);
+            // console.log("userObj", userObj);
 
             return $q((resolve, reject) => {
                 $http.post("/login", userObj).then(user => {

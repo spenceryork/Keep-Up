@@ -45,7 +45,8 @@ module.exports.getOneOccasion = (req, res, next) => {
         where: { id: req.params.id}
     })
     .then( occasion => {
-        res(status).json(occasion);
+        console.log("this is the specific occasion", occasion);
+        res.status(200).json(occasion);
     })
     .catch(error => {
         next(error)
