@@ -12,21 +12,6 @@ module.exports.addNewOccasion = ({ app, body: { user_id, title, date, budget } }
     })
 }
 
-// ORIGINAL
-module.exports.getOccasions = (req, res, next) => {
-    const { Occasion } = req.app.get("models");
-    Occasion.findAll({
-        raw: true,
-        where: { user_id: req.user.id }
-    })
-    .then(occasions => {
-        res.status(200).json(occasions);
-    })
-    .catch(error => {
-        next(error)
-    })
-}
-
 module.exports.getOccasions = (req, res, next) => {
     const { Occasion } = req.app.get("models");
     Occasion.findAll({
@@ -46,10 +31,10 @@ module.exports.getOccasions = (req, res, next) => {
 // }
 
 // module.exports.editOccasion = () => {
-
+//     Occasion.
 // }
 
-
+// This function is getting the occasion details as well as all the purchases for this specific occasion.
 module.exports.getOneOccasion = (req, res, next) => {
     console.log("what is req.params", req.params)
     const { Occasion, Purchase, sequelize } = req.app.get("models");

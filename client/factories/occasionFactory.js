@@ -10,11 +10,14 @@ angular.module("KeepUp").factory("OccasionFactory", function($http) {
         getUserOccasions() {
             return $http.get('/occasions');
         },
-        // getOccasion() {
-        //     return $http.get('/occasions/:id');
-        // },
         getOccasionDetails(occasion_id) {
             return $http.get(`/occasions/${occasion_id}`)
+        },
+        editOccasion(occasion_id) {
+            return $http.patch(`/occasions/${occasion_id}`)
+        },
+        deleteOccasion(occasion_id) {
+            return $http.delete(`/occasions/${occasion_id}`)
         }
 
     }

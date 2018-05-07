@@ -1,16 +1,70 @@
 <h1>INDIVIdual OCCASION</h1>
 
-<h3>{{occasion[0].title}}</h3>
-<h4>Date: {{occasion[0].date}}</h4> 
-<h4>Overall Budget: ${{occasion[0].budget}}</h4> 
+
+<div>
+    <div ng-switch="editMode">
+        <h6>Occasion:</h6>
+        <input ng-switch-when="edit" id="edit" ng-model="occasion.title" ng-value="occasion[0].title">
+        <h6 ng-switch-default id="{{occasion[0].title}}">{{occasion[0].title}}</h6>
+
+        <h6>Date:</h6>
+        <input ng-switch-when="edit" id="edit" ng-model="occasion.date" ng-value="occasion[0].date">
+        <h6 ng-switch-default>{{occasion[0].date}}</h6>
+
+        <h6>Budget:</h6>
+        <input ng-switch-when="edit" id="edit" ng-model="occasion.budget" ng-value="occasion[0].budget">
+        <h6 ng-switch-default>{{occasion[0].budget}}</h6>
+        
+        <div class="occasionButtons">
+            <button ng-switch-default ng-click="getOccasion()">EDIT</button>
+            <button ng-switch-when="edit" id="edit" ng-click="getOccasion()">SUBMIT</button>
+    
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 
+<div ng-if="editMode">
+    <input type="text" ng-model="occasion.title">
+</div>
+<h4 ng-if="!editMode">Date: {{occasion[0].date}}</h4>
+<div ng-if="editMode">
+    <input type="text" ng-model="occasion.date">
+</div>
+<h4 ng-if="!editMode">Overall Budget: ${{occasion[0].budget}}</h4>
+<div ng-if="editMode">
+    <input type="integer" ng-model="occasion.budget">
+</div>
 <h4>Purchase Total: ${{total}}</h4>
+<div ng-if="!editMode" class="occasionButtons">
+    <button ng-click="editMode == true">EDIT OCCASION</button>
+</div> -->
+
 
 <h4>Purchases</h4>
 <div class="purchaseCard" ng-repeat="purchase in occasionPurchases">
     <h6>Gift Purchased For: {{purchase.recipient}}</h6>
     <h6>{{purchase.name}}</h6>
-    {{purchase.description}} <br>
-    ${{purchase.price}} <br>
+    {{purchase.description}}
+    <br> ${{purchase.price}}
+    <br>
+    <div class="occasionButtons">
+        <button>EDIT PURCHASE</button>
+    </div>
 </div>
 
 
+
+<!-- <td>
+    <strong id="keyword.name" ng-if="!editMode">{{ keyword.name }}</strong>
+    <span ng-if="editMode">
+        <input ng-model="keyword.name">
+        <button ng-click="save(keyword); editMode = false">Save</button>
+        <span>
+</td>
+<td>
+    <button ng-click="editKeyword(keyword); editMode = true">Edit</button>
+    <button ng-click="deleteKeyword(keyword)">Delete</button>
+</td> -->
