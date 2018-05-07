@@ -17,6 +17,7 @@ angular.module('KeepUp', ["ngRoute"]).config($routeProvider => {
         .when("/occasions/:id", {
             templateUrl: "partials/individualOccasion.html",
             controller: "IndividualOccasionCtrl"
+            //take angulars routeparams.id
         })
         .when("/purchases", {
             templateUrl: "partials/purchases.html",

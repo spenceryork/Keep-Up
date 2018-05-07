@@ -10,6 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     Occasion.belongsTo(models.User, {
       foreignKey: "user_id"
     });
+    Occasion.hasMany(models.Purchase, {
+      foreignKey: "occasion_id"
+    });
   };
   return Occasion;
 };

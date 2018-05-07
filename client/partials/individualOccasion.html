@@ -1,1 +1,15 @@
 <h1>INDIVIdual OCCASION</h1>
+
+<h3>{{occasion[0].title}}</h3>
+<h4>Date: {{occasion[0].date}}</h4> 
+<h4>Overall Budget: ${{occasion[0].budget}}</h4> 
+
+<h4>Purchases</h4>
+<div class="purchaseCard" ng-repeat="purchase in occasionPurchases">
+    <h6>Gift Purchased For: {{purchase.recipient}}</h6>
+    <h6>{{purchase.name}}</h6>
+    {{purchase.description}} <br>
+    ${{purchase.price}} <br>
+</div>
+
+

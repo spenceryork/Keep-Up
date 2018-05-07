@@ -14,13 +14,13 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $l
     OccasionFactory.getUserOccasions()
     .then( occasions => {
         $scope.occasionList = occasions.data;
-        console.log("users occasionList", $scope.occasionList);
+        // console.log("users occasionList", $scope.occasionList);
     })
 
     $scope.addOccasion = (occasion) => {
         OccasionFactory.postOccasion(occasion)
         .then( occasion => {
-            console.log("occasion was added to DB", occasion);
+            // console.log("occasion was added to DB", occasion);
             $route.reload("/occasions");
         })
     }
