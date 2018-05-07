@@ -1,8 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Purchase = sequelize.define('Purchase', {
-    purchase_name: DataTypes.STRING,
-    price: DataTypes.INTEGER
+    name: DataTypes.STRING,
+    price: DataTypes.REAL,
+    description: DataTypes.STRING,
+    recipient: DataTypes.STRING
   }, {tableName: "purchases"});
   Purchase.associate = function(models) {
     Purchase.belongsTo(models.User, {

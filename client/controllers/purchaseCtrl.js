@@ -26,9 +26,8 @@ angular.module("KeepUp").controller("PurchaseCtrl", function($scope, PurchaseFac
     $scope.addPurchase = (purchase) => {
         PurchaseFactory.postPurchase(purchase)
         .then( purchase => {
-            console.log("purchase that was added to DB");
+            console.log("purchase that was added to DB", purchase);
             $route.reload("/purchases");
         })
     }
-
 })

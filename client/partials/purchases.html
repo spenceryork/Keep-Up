@@ -2,24 +2,24 @@
 <section class="addPurchaseForm">
     <div class="form-group">
         <label for="exampleFormControlSelect1">Occasion:</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" id="exampleFormControlSelect1" ng-model="purchase.occasion_id">
             <option value="">Select...</option>
-            <option ng-repeat="occasion in occasionList" ng-model="purchase.occasion">{{occasion.title}}</option>
+            <option ng-repeat="occasion in occasionList" ng-value="{{occasion.id}}">{{occasion.title}}</option>
         </select>
     </div>
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Recipient:</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-            <option value="">Select...</option>
-            <option ng-model="purchase.recipient">Family</option>
-        </select>
+    <div class="purchaseInputField">
+        Name:
+        <input type="text" ng-model="purchase.name">
     </div>
-    Name:
-    <input type="text" ng-model="purchase.purchase_name"> 
-    Price:
-    <input type="text" ng-model="purchase.price"> 
-    Description:
-    <input type="text" ng-model="purchase.description">
+    <div class="purchaseInputField">
+        Recipient: <input type="text" ng-model="purchase.recipient">
+    </div>
+    <div class="purchaseInputField">
+        Price: <input type="text" ng-model="purchase.price">
+    </div>
+    <div class="purchaseInputField">
+        Description: <input type="text" ng-model="purchase.description">
+    </div>
     <button ng-click="addPurchase(purchase)">TRACK</button>
 </section>
 <div class="occasionContainer">
