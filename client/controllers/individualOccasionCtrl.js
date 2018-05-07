@@ -38,8 +38,12 @@ angular.module("KeepUp").controller("IndividualOccasionCtrl", function($scope, O
             // console.log("occasion was added to DB", occasion);
             $route.reload(`/occasions/${occasion_id}`);
         })
-
     }
+
+    $scope.cancelEdit = () => {
+        $route.reload(`/occasions/${$routeParams.id}`)
+    }
+
 
 
 
