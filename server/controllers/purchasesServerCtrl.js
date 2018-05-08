@@ -42,7 +42,6 @@ module.exports.updatePurchase = ({ app, body: { name, recipient, description, pr
         )
 }
 
-// THIS ISN'T WORKING ALONG WITH GET PURCHASES
 module.exports.getOccasions = (req, res, next) => {
     const { Occasion } = req.app.get("models");
     Occasion.findAll({
@@ -59,12 +58,16 @@ module.exports.getOccasions = (req, res, next) => {
     })
 }
 
-// THIS ISN'T WORKING ALONG WITH GET OCCASIONS
 module.exports.getPurchases = (req, res, next, occasions) => {
-    const { Purchase } = req.app.get("models");
+    const { Purchase, Occasion } = req.app.get("models");
     Purchase.findAll({
-        raw: true,
-        where: { user_id: req.user.id }
+        // raw: true,
+        where: { user_id: req.user.id },
+        include: [{
+            model: Occasion,
+            required: false,
+            attributes: ["title"]
+        }]
     })
         .then(purchases => {
             // console.log("this is the specific occasion", occasion);
@@ -75,52 +78,6 @@ module.exports.getPurchases = (req, res, next, occasions) => {
         })
 
 }
-
-// THIS DOESN'T GIVE ME THE DATA IN A WAY THAT I CAN USE IT.
-module.exports.getOccasionsAndPurch = (req, res, next) => {
-    console.log("what is req.params", req.params)
-    const { Occasion, Purchase, sequelize } = req.app.get("models");
-    Occasion.findAll({
-        where: { user_id: req.user.id },
-        include: [{
-            raw: true,
-            model: Purchase,
-            required: false,
-            where: { user_id: req.user.id },
-        }]
-    })
-        .then(data => {
-            // console.log("this is the specific occasion", occasion);
-            res.status(200).json(data);
-        })
-        .catch(error => {
-            next(error)
-        })
-
-}
-
-
-// module.exports.getBoth = (req, res, next) => {
-
-//     const { Occasion, Purchase, sequelize } = req.app.get("models");
-//     Occasion.findAll({
-//         where: { user_id: req.user.id },
-//         include: [{
-//             raw: true,
-//             model: Purchase,
-//             required: false,
-//             where: { user_id: req.user.id },
-//         }]
-//     })
-//         .then(data => {
-//             // console.log("this is the specific occasion", occasion);
-//             res.status(200).json(data);
-//         })
-//         .catch(error => {
-//             next(error)
-//         })
-
-// }
 
 
 

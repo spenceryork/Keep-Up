@@ -3,6 +3,9 @@
     <div class="purchaseCard" ng-repeat="purchase in purchaseList">
         <div ng-switch="purchaseEditMode">
             <div>
+                <h4 ng-if="!purchase.edit">{{purchase.Occasion.title}}</h4>
+            </div>
+            <div>
                 <h6>Gift Purchased For:</h6>
                 <input ng-if="purchase.edit" id="edit" ng-model="purchase.recipient" ng-value="purchase.recipient">
                 <h6 ng-if="!purchase.edit">{{purchase.recipient}}</h6>
