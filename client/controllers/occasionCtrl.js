@@ -25,10 +25,6 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $l
         })
     }
 
-    $scope.cancelEdit = () => {
-        $route.reload(`/occasions/${routeParams.id}`)
-    }
-
 
     // $scope.getOneOccasion = (occasion_id) => {
     //     $location.url(`/occasions/${occasion_id}`);
@@ -41,12 +37,5 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $l
 
     // }
 
-    $scope.deleteOneOccasion = () => {
-
-    }
-
-    $scope.editOneOccasion = () => {
-
-    }
 
 })

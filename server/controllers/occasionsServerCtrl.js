@@ -26,9 +26,19 @@ module.exports.getOccasions = (req, res, next) => {
         })
 }
 
-// module.exports.deleteOccasion = () => {
+module.exports.deleteOccasion = (req, res, next) => {
+    const { Occasion } = req.app.get("models");
+    Occasion.destroy({
+        where: { id: req.params.id }
+    })
+    .then( occasion => {
+        res.status(200).json(occasion)
+    })
+    .catch( error => {
+        next(error)
+    });
 
-// }
+}
 
 module.exports.updateOccasion = ({ app, body: { title, date, budget, id } }, res, next) => {
 // module.exports.updateOccasion = (req, res, next) => {
@@ -55,6 +65,7 @@ module.exports.getOneOccasion = (req, res, next) => {
         where: { id: req.params.id },
         include: [{
             model: Purchase,
+            required: false,
             where: { occasion_id: req.params.id },
         }]
     })

@@ -17,7 +17,7 @@
         
         <div class="occasionButtons">
             <button ng-switch-default ng-click="getOccasion()">EDIT</button>
-            <button ng-switch-default>DELETE</button>
+            <button ng-switch-default ng-click="deleteOccasion()">DELETE</button>
             <button ng-switch-when="edit" id="edit" ng-click="updateOccasion(occasion[0].id, occasion[0])">SUBMIT</button>
             <button ng-switch-when="edit" id="edit" ng-click="cancelEdit()">CANCEL</button>
 

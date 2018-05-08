@@ -8,11 +8,9 @@ const { getPurchases } = require('../controllers/purchasesServerCtrl');
 
 router.post("/occasions", addNewOccasion);
 router.get("/occasions", getOccasions);
-// router.patch("/occasions/:id", editOccasion);
-// router.delete("/occasions", deleteOccasion);
+router.delete("/occasions/:id", deleteOccasion);
 router.get("/occasions/:id", getOneOccasion );
 router.patch("/occasions/:id", updateOccasion );
-
 
 
 module.exports = router;
