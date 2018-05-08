@@ -12,7 +12,7 @@ angular.module("KeepUp").factory("PurchaseFactory", function($http) {
         getPurchaseDetails(purchase_id) {
             return $http.get(`/purchases/${purchase_id}`)
         },
-        patchPurchase(purchase_id, occasion) {
+        patchPurchase(purchase_id, purchase) {
             return $http.patch(`/purchases/${purchase_id}`, purchase)
         },
         deletePurchase(purchase_id) {

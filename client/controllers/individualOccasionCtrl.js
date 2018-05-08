@@ -61,10 +61,11 @@ angular.module("KeepUp").controller("IndividualOccasionCtrl", function($scope, O
         });
     };
     
-    window.addEventListener("click", $scope.getPurchase)
+    // window.addEventListener("click", $scope.getPurchase)
 
-    $scope.getPurchase = () => {
-        $scope.purchaseEditMode = event.target.id;
+    $scope.getPurchase = (purchase) => {
+        // console.log("what is $index", index)
+        purchase.edit = true;
         console.log("what is this", event.target.id)
 
         // $scope.purchaseEditMode = +event.target.id;
@@ -77,6 +78,15 @@ angular.module("KeepUp").controller("IndividualOccasionCtrl", function($scope, O
             console.log("Purchase has been deleted!", purchase);
             $route.reload(`/occasions/${$routeParams.id}`)
         })
+    }
+
+    $scope.updatePurchase = (purchase_id, purchase) => {
+        console.log("purchase to be updated", purchase);
+        PurchaseFactory.patchPurchase(purchase_id, purchase)
+        .then( purchase => {
+            // console.log("purchase was added to DB", purchase);
+            $route.reload(`/occasion/${$routeParams.id}`);
+        });
     }
 
 
