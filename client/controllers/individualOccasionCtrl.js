@@ -61,14 +61,10 @@ angular.module("KeepUp").controller("IndividualOccasionCtrl", function($scope, O
         });
     };
     
-    // window.addEventListener("click", $scope.getPurchase)
 
     $scope.getPurchase = (purchase) => {
-        // console.log("what is $index", index)
         purchase.edit = true;
         console.log("what is this", event.target.id)
-
-        // $scope.purchaseEditMode = +event.target.id;
     }
 
     $scope.deletePurchase = (purchaseId, purchase) => {

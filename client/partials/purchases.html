@@ -1,4 +1,34 @@
 <h1>Purchases</h1>
+
+<div class="addContainer">
+    <section class="addPurchaseForm">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Occasion:</label>
+                <select class="form-control" id="exampleFormControlSelect1" ng-model="purchase.occasion_id">
+                    <option value="">Select...</option>
+                    <option ng-repeat="occasion in occasionList" ng-value="{{occasion.id}}">{{occasion.title}}</option>
+                </select>
+            </div>
+            <div class="purchaseInputField">
+                Name:
+                <input type="text" ng-model="purchase.name">
+            </div>
+            <div class="purchaseInputField">
+                Recipient:
+                <input type="text" ng-model="purchase.recipient">
+            </div>
+            <div class="purchaseInputField">
+                Price:
+                <input type="text" ng-model="purchase.price">
+            </div>
+            <div class="purchaseInputField">
+                Description:
+                <input type="text" ng-model="purchase.description">
+            </div>
+            <button ng-click="addPurchase(purchase)">TRACK</button>
+    </section>
+</div>
+
 <div class="purchasesContainer">
     <div class="purchaseCard" ng-repeat="purchase in purchaseList">
         <div ng-switch="purchaseEditMode">
@@ -43,13 +73,12 @@
 
 
 
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<!-- MODAL -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     ADD PURCHASE
 </button>
 
-<!-- Modal -->
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -85,7 +114,7 @@
                         <input type="text" ng-model="purchase.description">
                     </div>
                     <!-- <button ng-click="addPurchase(purchase)">TRACK</button> -->
-                </section>
+                <!-- </section>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -93,4 +122,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>  -->
