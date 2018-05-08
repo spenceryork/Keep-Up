@@ -41,10 +41,7 @@ module.exports.deleteOccasion = (req, res, next) => {
 }
 
 module.exports.updateOccasion = ({ app, body: { title, date, budget, id } }, res, next) => {
-// module.exports.updateOccasion = (req, res, next) => {
     let Occasion = app.get("models").Occasion;
-    // const { Occasion } = req.app.get("models");
-
     Occasion.update(
         { title, date, budget },
         { where: { id: id } }

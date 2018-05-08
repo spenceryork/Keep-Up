@@ -6,7 +6,7 @@ angular.module("KeepUp").factory("PurchaseFactory", function($http) {
         postPurchase(purchase) {
             return $http.post('/purchases', purchase)
         },
-        getUserOccasions() {
+        getOccasionsAndPurchases() {
             return $http.get('/purchases')
         },
         getPurchaseDetails(purchase_id) {
@@ -17,7 +17,15 @@ angular.module("KeepUp").factory("PurchaseFactory", function($http) {
         },
         deletePurchase(purchase_id) {
             return $http.delete(`/purchases/${purchase_id}`)
+        },
+        getOccasionsAndPurchases() {
+            return $http.get('/purchases')
         }
+        // getOccasionsAndPurchases(purchase_id) {
+        //     return $http.get(`/purchases`)
+        // }
+        
+
     }
 
 })

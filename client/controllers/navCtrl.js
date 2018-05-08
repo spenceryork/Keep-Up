@@ -8,8 +8,8 @@ angular.module("KeepUp").controller("NavCtrl", function($scope, AuthFactory) {
             url: "#!/occasions"
         },
         {
-            name: "Recipients",
-            url: "#!/recipients"
+            name: "Purchases",
+            url: "#!/purchases"
         },
         {
             name: "Login",
