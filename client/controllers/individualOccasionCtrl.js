@@ -60,9 +60,24 @@ angular.module("KeepUp").controller("IndividualOccasionCtrl", function($scope, O
             };
         });
     };
+    
+    window.addEventListener("click", $scope.getPurchase)
 
+    $scope.getPurchase = () => {
+        $scope.purchaseEditMode = event.target.id;
+        console.log("what is this", event.target.id)
 
+        // $scope.purchaseEditMode = +event.target.id;
+    }
 
+    $scope.deletePurchase = (purchaseId, purchase) => {
+        console.log("what is purchase", purchase, "what is purchaseID", purchaseId)
+        PurchaseFactory.deletePurchase(purchaseId, purchase)
+        .then( purchase => {
+            console.log("Purchase has been deleted!", purchase);
+            $route.reload(`/occasions/${$routeParams.id}`)
+        })
+    }
 
 
 })

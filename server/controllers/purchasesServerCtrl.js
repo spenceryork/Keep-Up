@@ -11,21 +11,19 @@ module.exports.addPurchase = ({ app, body: { user_id, name, price, occasion_id, 
     })
 }
 
-// NOT NEEDED. GETTING PURCHASES DURING QUERY FOR SPECIFIC OCCASION
-// module.exports.getPurchases = (req, res, next) => {
-//     const { Purchase } = req.app.get("models");
-//     console.log("what are the req params", req.params)
-//     Purchase.findAll({
-//         raw: true,
-//         where: { occasion_id: req.params.id }
-//     })
-//     .then( purchases => {
-//         res.status(200).json(purchases)
-//         // console.log("purchases from server function", purchases)
-//     })
-//     .catch( error => {
-//         next(error)
-//     })
-// }
+module.exports.deletePurchase = (req, res, next) => {
+    const { Purchase } = req.app.get("models"); 
+    Purchase.destroy({
+        where: { id: req.params.id }
+    })
+    .then( purchase => {
+        console.log("")
+        res.status(200).json(purchase)
+    })
+    .catch( error => {
+        next(error)
+    });
+}
+
 
 

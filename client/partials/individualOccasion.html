@@ -31,26 +31,34 @@
 
 <h4>Purchases</h4>
 <div class="purchaseCard" ng-repeat="purchase in occasionPurchases">
-    <h6>Gift Purchased For: {{purchase.recipient}}</h6>
-    <h6>{{purchase.name}}</h6>
-    {{purchase.description}}
-    <br> ${{purchase.price}}
-    <br>
-    <div class="occasionButtons">
-        <button>EDIT PURCHASE</button>
+    <div ng-switch="purchaseEditMode">
+        <div>
+            <h6>Gift Purchased For:</h6> 
+            <input ng-switch-when="edit" id="edit" ng-model="purchase.recipient" ng-value="purchase.recipient">
+            <h6 ng-switch-default>{{purchase.recipient}}</h6>
+            Purchase ID {{purchase.id}}
+        </div>
+
+        <div>
+            <input ng-switch-when="edit" id="edit" ng-model="purchase.name" ng-value="purchase.name">
+            <h6 ng-switch-default>{{purchase.name}}</h6>
+        </div>
+
+        <div>
+            <input ng-switch-when="edit" id="edit" ng-model="purchase.description" ng-value="purchase.description">
+            <h6 ng-switch-default>{{purchase.description}}</h6>
+        </div>
+
+        <div>
+            <input ng-switch-when="edit" id="edit" ng-model="purchase.price" ng-value="purchase.price">
+            <h6 ng-switch-default>{{purchase.price}}</h6>
+        </div>
+
+        <div class="occasionButtons">
+            <button ng-switch-default ng-click="getPurchase()" id="{{purchase.id}}">EDIT</button>
+            <button ng-switch-default ng-click="deletePurchase(purchase.id)">DELETE</button>
+            <button ng-switch-when="edit" id="edit" ng-click="updatePurchase(purchase.id)">SUBMIT</button>
+            <button ng-switch-when="edit" id="edit" ng-click="cancelEdit()">CANCEL</button>
+        </div>
     </div>
 </div>
-
-
-
-<!-- <td>
-    <strong id="keyword.name" ng-if="!editMode">{{ keyword.name }}</strong>
-    <span ng-if="editMode">
-        <input ng-model="keyword.name">
-        <button ng-click="save(keyword); editMode = false">Save</button>
-        <span>
-</td>
-<td>
-    <button ng-click="editKeyword(keyword); editMode = true">Edit</button>
-    <button ng-click="deleteKeyword(keyword)">Delete</button>
-</td> -->
