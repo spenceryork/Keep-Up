@@ -1,22 +1,28 @@
-<div class="occasionsPageContainer d-flex flex-row">
-    <div class="individualOccContainer">
-        <div class="addOccasion">
-            Title:<input type="text" class="form-control" ng-model="occasion.title" required> 
-            Occasion Date: <input type="text" class="form-control" name="" id="" placeholder="mm/dd/yyyy" ng-model="occasion.date" required> 
-            Budget:<input type="integer" class="form-control" ng-model="occasion.budget">
-            <button type="button" class="btn btn-secondary" ng-click="addOccasion(occasion)">ADD OCCASION</button>
-        </div>
+<div class=occasionPage>
+    <div class="occasionHeader">
+        <h1>Track Any Occasion!</h1>
     </div>
-    <div class="occasionCardContainer">
-        <div class="occasionCard" ng-repeat="occasion in occasionList">
-            <a href="#!/occasions/{{occasion.id}}" class="d-flex flex-row">
-                <h6>OCCASION:</h6> <br>
-                <h6 class='occasionTitle'> {{occasion.title}}</h6>
-                <h6>DATE:</h6> <br>
-                <h6 class='occasionDate'>{{occasion.date}}</h6>
-                <h6>BUDGET:</h6> <br>
-                <h6 class='occasionBudget'>${{occasion.budget}}</h6>
-            </a>
+    <div class="occasionsPageContainer d-flex flex-row">
+        <div class="individualOccContainer">
+            <div class="addOccasion">
+                Title:<input type="text" class="form-control" ng-model="occasion.title" required> 
+                Occasion Date: <input type="text" class="form-control" name="" id="" placeholder="mm/dd/yyyy" ng-model="occasion.date" required> 
+                Budget:<input type="integer" class="form-control" ng-model="occasion.budget">
+                <button type="button" class="btn btn-secondary" ng-click="addOccasion(occasion)">ADD OCCASION</button>
+            </div>
+        </div>
+        <div class="occasionCardContainer">
+            <div class="occasionCard" ng-repeat="occasion in occasionList">
+                <a href="#!/occasions/{{occasion.id}}" class="d-flex flex-row">
+                    <i class="far fa-calendar-alt fa-2x"></i>
+                    <h6><strong>OCCASION:</strong></h6> <br>
+                    <h6 class='occasionTitle'> {{occasion.title}}</h6>
+                    <h6><strong>DATE:</strong></h6> <br>
+                    <h6 class='occasionDate'>{{occasion.date}}</h6>
+                    <h6><strong>BUDGET:</strong></h6> <br>
+                    <h6 class='occasionBudget'>${{occasion.budget}}</h6>
+                </a>
+            </div>
         </div>
     </div>
 </div>

@@ -1,29 +1,75 @@
+.occasionHeader {
+    h1 {
+        margin: 20px 20px 0 20px;
+    }
+}
+
 .occasionsPageContainer {
-    width: 90%;
+    width: 95%;
+    margin: 0 auto;
     .individualOccContainer {
         width: 30%;
         .addOccasion {
-            border: 2px solid black;  
+            // border: 2px solid black;  
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             width: 100%;
             padding: 20px;
+            margin: 20px 0 0 0;
             button {
                 margin-top: 20px;
+            }
+            .form-control {
+                margin: 0 0 10px 0;
             }
         }
     }
 }
 
+.occasionCardContainer {
+    width: 90%;
+}
+
 .occasionCard {
-    width: 100%;
-    border: 2px solid black;
+    // margin: 0 auto;
+    width: 95%;
+    // border: 2px solid black;
     padding: 20px;
     text-decoration: none;
     color: grey;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    margin: 20px 20px 20px 40px;
     h6 {
-        padding: 0 10px;
+        padding: 10px;
+        padding-right: 0px;
+        margin-bottom: 0px;
+    }
+    a {
+        .fa-calendar-alt {
+            color:rgb(63, 80, 35);
+        }
+        h6 {
+            color: rgb(63, 80, 35);
+            text-decoration: none;
+        }
+        h6:hover {
+            color: rgb(63, 80, 35);
+            text-decoration: none;
+        }
+        
     }
     .occasionTitle {
-        width: 50%;
+        width: 40%;
+    }
+    .occasionDate {
+        width: 30%;
+    }
+    .occasionBudget {
+        width: 30%;
     }
     // box-shadow: 12px 0 15px -4px rgba(99, 98, 97, 0.4);
 }
+
+.occasionCard:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
