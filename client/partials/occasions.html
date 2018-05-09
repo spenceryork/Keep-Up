@@ -1,17 +1,11 @@
 <div class="occasionsPageContainer">
     <div class="individualOccContainer">
-        <button>ADD</button>
         <div class="addOccasion">
-            Title:<input type="text" ng-model="occasion.title" required> 
-            Occasion Date: <input type="text" name="" id="" placeholder="mm/dd/yyyy" ng-model="occasion.date" required> 
-            Budget:<input type="integer" ng-model="occasion.budget">
-            <button ng-click="addOccasion(occasion)">ADD OCCASION</button>
+            Title:<input type="text" class="form-control" ng-model="occasion.title" required> 
+            Occasion Date: <input type="text" class="form-control" name="" id="" placeholder="mm/dd/yyyy" ng-model="occasion.date" required> 
+            Budget:<input type="integer" class="form-control" ng-model="occasion.budget">
+            <button type="button" class="btn btn-secondary" ng-click="addOccasion(occasion)">ADD OCCASION</button>
         </div>
-    </div>
-    <div>
-        <h4>Occasions</h4>
-        <a href="/occasions">Upcoming</a>
-        <a href="/past-occasions">Past</a>
     </div>
     <div class "occasionCard" ng-repeat="occasion in occasionList">
         <a href="#!/occasions/{{occasion.id}}">

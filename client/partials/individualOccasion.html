@@ -4,22 +4,22 @@
 <div>
     <div ng-switch="editMode">
         <h6>Occasion:</h6>
-        <input ng-switch-when="edit" id="edit" ng-model="occasion[0].title" ng-value="occasion[0].title">
+        <input type="text" class="form-control" ng-switch-when="edit" id="edit" ng-model="occasion[0].title" ng-value="occasion[0].title">
         <h6 ng-switch-default id="{{occasion[0].title}}">{{occasion[0].title}}</h6>
 
         <h6>Date:</h6>
-        <input ng-switch-when="edit" id="edit" ng-model="occasion[0].date" ng-value="occasion[0].date">
+        <input type="text" class="form-control" ng-switch-when="edit" id="edit" ng-model="occasion[0].date" ng-value="occasion[0].date">
         <h6 ng-switch-default>{{occasion[0].date}}</h6>
 
         <h6>Budget:</h6>
-        <input ng-switch-when="edit" type="integer" id="edit" ng-model="occasion[0].budget" ng-value="occasion[0].budget">
+        <input type="text" class="form-control" ng-switch-when="edit" type="integer" id="edit" ng-model="occasion[0].budget" ng-value="occasion[0].budget">
         <h6 ng-switch-default>{{occasion[0].budget}}</h6>
         
         <div class="occasionButtons">
-            <button ng-switch-default ng-click="getOccasion()">EDIT</button>
-            <button ng-switch-default ng-click="deleteOccasion()">DELETE</button>
-            <button ng-switch-when="edit" id="edit" ng-click="updateOccasion(occasion[0].id, occasion[0])">SUBMIT</button>
-            <button ng-switch-when="edit" id="edit" ng-click="cancelEdit()">CANCEL</button>
+            <button type="button" class="btn btn-secondary btn-sm" ng-switch-default ng-click="getOccasion()">EDIT</button>
+            <button type="button" class="btn btn-danger btn-sm" ng-switch-default ng-click="deleteOccasion()">DELETE</button>
+            <button type="button" class="btn btn-secondary btn-sm" ng-switch-when="edit" id="edit" ng-click="updateOccasion(occasion[0].id, occasion[0])">SUBMIT</button>
+            <button type="button" class="btn btn-light btn-sm" ng-switch-when="edit" id="edit" ng-click="cancelEdit()">CANCEL</button>
 
     
         </div>
@@ -34,31 +34,31 @@
     <div ng-switch="purchaseEditMode">
         <div>
             <h6>Gift Purchased For:</h6> 
-            <input ng-if="purchase.edit" id="edit" ng-model="purchase.recipient" ng-value="purchase.recipient">
+            <input ng-if="purchase.edit" type="text" class="form-control" id="edit" ng-model="purchase.recipient" ng-value="purchase.recipient">
             <h6 ng-if="!purchase.edit">{{purchase.recipient}}</h6>
             Purchase ID {{purchase.id}}
         </div>
 
         <div>
-            <input ng-if="purchase.edit" id="edit" ng-model="purchase.name" ng-value="purchase.name">
+            <input ng-if="purchase.edit" type="text" class="form-control" id="edit" ng-model="purchase.name" ng-value="purchase.name">
             <h6 ng-if="!purchase.edit">{{purchase.name}}</h6>
         </div>
 
         <div>
-            <input ng-if="purchase.edit" id="edit" ng-model="purchase.description" ng-value="purchase.description">
+            <input ng-if="purchase.edit" type="text" class="form-control" id="edit" ng-model="purchase.description" ng-value="purchase.description">
             <h6 ng-if="!purchase.edit">{{purchase.description}}</h6>
         </div>
 
         <div>
-            <input ng-if="purchase.edit" id="edit" ng-model="purchase.price" ng-value="purchase.price">
+            <input ng-if="purchase.edit" type="text" class="form-control" id="edit" ng-model="purchase.price" ng-value="purchase.price">
             <h6 ng-if="!purchase.edit">{{purchase.price}}</h6>
         </div>
 
         <div class="occasionButtons">
-            <button ng-if="!purchase.edit" ng-click="getPurchase(purchase)" id="{{purchase.id}}">EDIT</button>
-            <button ng-if="!purchase.edit" ng-click="deletePurchase(purchase.id)">DELETE</button>
-            <button ng-if="purchase.edit" id="edit" ng-click="updatePurchase(purchase.id, purchase)">SUBMIT</button>
-            <button ng-if="purchase.edit" id="edit" ng-click="cancelEdit()">CANCEL</button>
+            <button type="button" class="btn btn-secondary btn-sm" ng-if="!purchase.edit" ng-click="getPurchase(purchase)" id="{{purchase.id}}">EDIT</button>
+            <button type="button" class="btn btn-danger btn-sm" ng-if="!purchase.edit" ng-click="deletePurchase(purchase.id)">DELETE</button>
+            <button type="button" class="btn btn-secondary btn-sm" ng-if="purchase.edit" id="edit" ng-click="updatePurchase(purchase.id, purchase)">SUBMIT</button>
+            <button type="button" class="btn btn-light btn-sm" ng-if="purchase.edit" id="edit" ng-click="cancelEdit()">CANCEL</button>
         </div>
     </div>
 </div>

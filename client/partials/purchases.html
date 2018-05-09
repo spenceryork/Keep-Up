@@ -2,30 +2,30 @@
 
 <div class="addContainer">
     <section class="addPurchaseForm">
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Occasion:</label>
-                <select class="form-control" id="exampleFormControlSelect1" ng-model="purchase.occasion_id">
-                    <option value="">Select...</option>
-                    <option ng-repeat="occasion in occasionList" ng-value="{{occasion.id}}">{{occasion.title}}</option>
-                </select>
-            </div>
-            <div class="purchaseInputField">
-                Name:
-                <input type="text" ng-model="purchase.name">
-            </div>
-            <div class="purchaseInputField">
-                Recipient:
-                <input type="text" ng-model="purchase.recipient">
-            </div>
-            <div class="purchaseInputField">
-                Price:
-                <input type="text" ng-model="purchase.price">
-            </div>
-            <div class="purchaseInputField">
-                Description:
-                <input type="text" ng-model="purchase.description">
-            </div>
-            <button ng-click="addPurchase(purchase)">TRACK</button>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Occasion:</label>
+            <select class="form-control" id="exampleFormControlSelect1" ng-model="purchase.occasion_id">
+                <option value="">Select...</option>
+                <option ng-repeat="occasion in occasionList" ng-value="{{occasion.id}}">{{occasion.title}}</option>
+            </select>
+        </div>
+        <div class="purchaseInputField">
+            Name:
+            <input type="text" class="form-control" ng-model="purchase.name">
+        </div>
+        <div class="purchaseInputField">
+            Recipient:
+            <input type="text" class="form-control" ng-model="purchase.recipient">
+        </div>
+        <div class="purchaseInputField">
+            Price:
+            <input type="text" class="form-control" ng-model="purchase.price">
+        </div>
+        <div class="purchaseInputField">
+            Description:
+            <input type="text" class="form-control" ng-model="purchase.description">
+        </div>
+        <button type="button" class="btn btn-secondary" ng-click="addPurchase(purchase)">TRACK</button>
     </section>
 </div>
 
@@ -34,34 +34,37 @@
         <div ng-switch="purchaseEditMode">
             <div>
                 <h4 ng-if="!purchase.edit">{{purchase.Occasion.title}}</h4>
+                <select class="form-control" ng-if="purchase.edit" id="exampleFormControlSelect1" ng-model="purchase.occasion_id">
+                    <option value="">Select...</option>
+                    <option ng-repeat="occasion in occasionList" ng-value="{{occasion.id}}">{{occasion.title}}</option>
+                </select>
             </div>
             <div>
                 <h6>Gift Purchased For:</h6>
-                <input ng-if="purchase.edit" id="edit" ng-model="purchase.recipient" ng-value="purchase.recipient">
+                <input type="text" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.recipient" ng-value="purchase.recipient">
                 <h6 ng-if="!purchase.edit">{{purchase.recipient}}</h6>
-                Purchase ID {{purchase.id}}
             </div>
 
             <div>
-                <input ng-if="purchase.edit" id="edit" ng-model="purchase.name" ng-value="purchase.name">
+                <input type="text" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.name" ng-value="purchase.name">
                 <h6 ng-if="!purchase.edit">{{purchase.name}}</h6>
             </div>
 
             <div>
-                <input ng-if="purchase.edit" id="edit" ng-model="purchase.description" ng-value="purchase.description">
+                <input type="text" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.description" ng-value="purchase.description">
                 <h6 ng-if="!purchase.edit">{{purchase.description}}</h6>
             </div>
 
             <div>
-                <input ng-if="purchase.edit" id="edit" ng-model="purchase.price" ng-value="purchase.price">
+                <input type="text" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.price" ng-value="purchase.price">
                 <h6 ng-if="!purchase.edit">{{purchase.price}}</h6>
             </div>
 
             <div class="occasionButtons">
-                <button ng-if="!purchase.edit" ng-click="getPurchase(purchase)" id="{{purchase.id}}">EDIT</button>
-                <button ng-if="!purchase.edit" ng-click="deletePurchase(purchase.id)">DELETE</button>
-                <button ng-if="purchase.edit" id="edit" ng-click="updatePurchase(purchase.id, purchase)">SUBMIT</button>
-                <button ng-if="purchase.edit" id="edit" ng-click="cancelEdit()">CANCEL</button>
+                <button type="button" class="btn btn-secondary btn-sm" ng-if="!purchase.edit" ng-click="getPurchase(purchase)" id="{{purchase.id}}">EDIT</button>
+                <button type="button" class="btn btn-danger btn-sm" ng-if="!purchase.edit" ng-click="deletePurchase(purchase.id)">DELETE</button>
+                <button type="button" class="btn btn-secondary btn-sm" ng-if="purchase.edit" id="edit" ng-click="updatePurchase(purchase.id, purchase)">SUBMIT</button>
+                <button type="button" class="btn btn-light btn-sm" ng-if="purchase.edit" id="edit" ng-click="cancelEdit()">CANCEL</button>
             </div>
         </div>
     </div>
@@ -114,7 +117,7 @@
                         <input type="text" ng-model="purchase.description">
                     </div>
                     <!-- <button ng-click="addPurchase(purchase)">TRACK</button> -->
-                <!-- </section>
+<!-- </section>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

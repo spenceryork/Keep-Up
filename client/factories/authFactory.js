@@ -29,6 +29,16 @@ angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope) 
                 reject(err);
             });
         },
+        // logoutUser(userObj) {
+        //     return $q((resolve, reject) => {
+        //         $http.post("/home", userObj).then(user => {
+        //             currentUser = null;
+        //             resolve(currentUser);
+        //         });
+        //     }).catch(err => {
+        //         reject(err);
+        //     });
+        // },
 
         getCurrentUser() {
             return currentUser;
