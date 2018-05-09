@@ -1,4 +1,4 @@
-<div class="occasionsPageContainer">
+<div class="occasionsPageContainer d-flex flex-row">
     <div class="individualOccContainer">
         <div class="addOccasion">
             Title:<input type="text" class="form-control" ng-model="occasion.title" required> 
@@ -7,11 +7,16 @@
             <button type="button" class="btn btn-secondary" ng-click="addOccasion(occasion)">ADD OCCASION</button>
         </div>
     </div>
-    <div class "occasionCard" ng-repeat="occasion in occasionList">
-        <a href="#!/occasions/{{occasion.id}}">
-            <h5>{{occasion.title}}</h5>
-            <h6>{{occasion.date}}</h6>
-            <h6>{{occasion.budget}}</h6>
-        </a>
+    <div class="occasionCardContainer">
+        <div class="occasionCard" ng-repeat="occasion in occasionList">
+            <a href="#!/occasions/{{occasion.id}}" class="d-flex flex-row">
+                <h6>OCCASION:</h6> <br>
+                <h6 class='occasionTitle'> {{occasion.title}}</h6>
+                <h6>DATE:</h6> <br>
+                <h6 class='occasionDate'>{{occasion.date}}</h6>
+                <h6>BUDGET:</h6> <br>
+                <h6 class='occasionBudget'>${{occasion.budget}}</h6>
+            </a>
+        </div>
     </div>
 </div>

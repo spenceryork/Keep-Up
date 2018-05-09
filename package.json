@@ -9,6 +9,12 @@
     "lint": "eslint --color **/*.js --ignore-pattern node_modules/",
     "dev": "concurrently \"nodemon server.js\" \"npm run sass\" \"rerun-script\""
   },
+  "watches": {
+    "sass": [
+      "client/sass/*.scss"
+    ],
+    "lint": "**/*.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

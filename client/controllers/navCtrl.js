@@ -14,15 +14,8 @@ angular.module("KeepUp").controller("NavCtrl", function($scope, AuthFactory, $wi
         }
     });
 
-    $scope.go = (navUrl) => {
-        if (navUrl === "#!/home") {
-          AuthFactory.logoutUser();
-        } else {
-          $window.location.href = navUrl;
-        }
-    };
-
-
+    
+    
     $scope.navBar = [
         {
             name: "Occasions",
@@ -42,5 +35,16 @@ angular.module("KeepUp").controller("NavCtrl", function($scope, AuthFactory, $wi
             url: "#!/home"
         }
     ];
-
+    
+    $scope.go = (navUrl) => {
+        console.log("navurl", navUrl);
+        if (navUrl === "#!/home") {
+          AuthFactory.logoutUser()
+          .then(data => {
+              console.log("what is this data??", data);
+          })
+        } else {
+          $window.location.href = navUrl;
+        }
+    };
 })

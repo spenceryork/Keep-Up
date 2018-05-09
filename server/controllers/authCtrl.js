@@ -59,9 +59,26 @@ module.exports.login = (req, res, next) => {
 
 // logging out
 module.exports.logout = (req, res, next) => {
+    console.log("req.user", req.user)
     req.session.destroy(function (err) {
-        if (err) return next(err);
+        // req.session.destroy();
+        req.logout();
+        req.session = null;
+        res.redirect('/');
+        if (err) next(err)
+        console.log("logging out????????", req.user)
+        console.log("logging err", err)
+
+
+        // console.log("user", user)
 
         res.status(200).end();
     });
 };
+
+// module.exports.logout = (req, res) => {
+//     req.session.destroy(function(err) {
+//         console.log("session destroyed")
+//         if (!err) res.redirect('/#!/home');
+//     });
+// };

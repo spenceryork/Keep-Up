@@ -4,6 +4,13 @@ const { Router } = require('express');
 const router = Router();
 const { login, register, logout } = require('../controllers/authCtrl');
 
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/login');
+}
+
 router.post("/register", register);
 router.post("/login", login);
 router.post("/logout", logout);

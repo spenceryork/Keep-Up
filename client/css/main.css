@@ -1,0 +1,21 @@
+.occasionsPageContainer {
+  width: 90%; }
+  .occasionsPageContainer .individualOccContainer {
+    width: 30%; }
+    .occasionsPageContainer .individualOccContainer .addOccasion {
+      border: 2px solid black;
+      width: 100%;
+      padding: 20px; }
+      .occasionsPageContainer .individualOccContainer .addOccasion button {
+        margin-top: 20px; }
+
+.occasionCard {
+  width: 100%;
+  border: 2px solid black;
+  padding: 20px;
+  text-decoration: none;
+  color: grey; }
+  .occasionCard h6 {
+    padding: 0 10px; }
+  .occasionCard .occasionTitle {
+    width: 50%; }

@@ -29,16 +29,18 @@ angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope) 
                 reject(err);
             });
         },
-        // logoutUser(userObj) {
-        //     return $q((resolve, reject) => {
-        //         $http.post("/home", userObj).then(user => {
-        //             currentUser = null;
-        //             resolve(currentUser);
-        //         });
-        //     }).catch(err => {
-        //         reject(err);
-        //     });
-        // },
+        logoutUser() {
+            return $q((resolve, reject) => {
+                $http.post("/logout").then(user => {
+                    console.log("might be logged out???")
+                    console.log("currentUser", user.data)
+                    currentUser = null;
+                    resolve(user);
+                });
+            }).catch(err => {
+                reject(err);
+            });
+        },
 
         getCurrentUser() {
             return currentUser;
