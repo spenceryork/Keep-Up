@@ -31,19 +31,19 @@ angular.module("KeepUp").controller("PurchaseCtrl", function ($scope, PurchaseFa
         console.log("Active user in occasion ctrl", user.id);
     });
 
-
     PurchaseFactory.getOccasionsAndPurchases()
-        .then(data => {
-            $scope.purchaseList = data.data.purchases;
-            console.log("what is purchaseList?", $scope.purchaseList)
-            $scope.occasionList = data.data.occasions;
-            console.log("what is occasionList?", $scope.occasionList)
-            $scope.total = 0;
-            for (var i = 0; i < $scope.purchaseList.length; i++) {
-                $scope.total += $scope.purchaseList[i].price;
-            }
-            console.log("what is the purchase total", $scope.total);
-            // console.log("users occasionList in purchase CTRL", $scope.occasionList);
+    .then(data => {
+        $scope.purchaseList = data.data.purchases;
+        $scope.occasionList = data.data.occasions;
+        $scope.total = 0;
+        for (var i = 0; i < $scope.purchaseList.length; i++) {
+            $scope.total += $scope.purchaseList[i].price;
+        }
+        if($scope.purchaseList.length > 0) {
+            $scope.userPurchases = true;
+        } else {
+            $scope.userPurchases = false;
+        }
         })
 
 

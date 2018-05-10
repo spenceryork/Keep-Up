@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope) {
+angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope, $location) {
 
     let currentUser = null;
 
@@ -65,7 +65,11 @@ angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope) 
         },
 
         broadcastUserLogin(user) {
-            $rootScope.$broadcast("handleBroadcast", user);
+            if(!user.id) {
+                $location.path("/home")
+            } else {
+                $rootScope.$broadcast("handleBroadcast", user);
+            }
         }
     };
 });

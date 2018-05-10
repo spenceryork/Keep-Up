@@ -7,7 +7,7 @@
             <div class="addOccasion">
                 Title:<input type="text" class="form-control" ng-model="occasion.title" required> 
                 Occasion Date: <input type="text" class="form-control" name="" id="" placeholder="mm/dd/yyyy" ng-model="occasion.date" required> 
-                Budget:<input type="integer" class="form-control" ng-model="occasion.budget">
+                Budget:<input type="number" min="0.01" step="0.01" class="form-control" ng-model="occasion.budget" required>
                 <button type="button" class="btn btn-secondary" ng-click="addOccasion(occasion)">ADD OCCASION</button>
             </div>
         </div>

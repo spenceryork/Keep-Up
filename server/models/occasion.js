@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   var Occasion = sequelize.define('Occasion', {
     title: DataTypes.STRING,
     date: DataTypes.STRING,
-    budget: DataTypes.INTEGER
+    budget: DataTypes.REAL
   }, {tableName: "occasions"});
   Occasion.associate = function(models) {
     // associations can be defined here

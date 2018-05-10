@@ -14,26 +14,34 @@
                 </div>
                 <div class="purchaseInputField">
                     Name:
-                    <input type="text" class="form-control" ng-model="purchase.name">
+                    <input type="text" class="form-control" ng-model="purchase.name" required>
                 </div>
                 <div class="purchaseInputField">
                     Recipient:
-                    <input type="text" class="form-control" ng-model="purchase.recipient">
+                    <input type="text" class="form-control" ng-model="purchase.recipient" required>
                 </div>
                 <div class="purchaseInputField">
                     Price:
-                    <input type="text" class="form-control" ng-model="purchase.price">
+                    <input type="text" class="form-control" ng-model="purchase.price" required>
                 </div>
                 <div class="purchaseInputField">
                     Description:
-                    <input type="text" class="form-control" ng-model="purchase.description">
+                    <input type="text" class="form-control" ng-model="purchase.description" required>
                 </div>
                 <button type="button" class="btn btn-secondary" ng-click="addPurchase(purchase)">TRACK</button>
             </section>
         </div>
-        <div class="totalPurchases">
-            <h2><strong>Total Amount Spent On Purchases</strong></h2>
-            <h2 ng-pattern="^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*\.[0-9]{2}$">${{total}}</h2>
+        <div class="purchasesTotalAndAlert">
+            <div class="noPurchasesAlert" style="margin: 20px 0 25px 25px">
+                <div ng-if="!userPurchases" class="alert alert-info" role="alert">
+                    <strong>No Purchases have been added yet!</strong> Start budgeting by adding your first Purchase.
+                </div>
+            </div>
+            <div class="totalPurchases">
+                <h2><strong>Total Amount Spent On Purchases</strong></h2>
+                <h2>${{total}}</h2>
+                <i class="far fa-money-bill-alt fa-4x"></i>
+            </div>
         </div>
     </div>
     <div class="secondaryPurchaseHeader">
@@ -43,34 +51,34 @@
     <div class="purchasesContainer d-flex flex-row flex-wrap">
         <div class="purchaseCard" ng-repeat="purchase in purchaseList">
             <div ng-switch="purchaseEditMode">
-                <div>
+                <div class="purchaseCardText">
                     <h4 ng-if="!purchase.edit">{{purchase.Occasion.title}}</h4>
                     <select class="form-control" ng-if="purchase.edit" id="exampleFormControlSelect1" ng-model="purchase.occasion_id">
                         <option value="">Select...</option>
                         <option ng-repeat="occasion in occasionList" ng-value="{{occasion.id}}">{{occasion.title}}</option>
                     </select>
                 </div>
-                <div>
+                <div class="purchaseCardText">
                     <h6><strong>Purchased For</strong></h6> 
-                    <input type="text" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.recipient" ng-value="purchase.recipient">
+                    <input type="text" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.recipient" ng-value="purchase.recipient" required>
                     <h6 ng-if="!purchase.edit">{{purchase.recipient}}</h6>
                 </div>
 
-                <div>
+                <div class="purchaseCardText">
                     <h6><strong>Gift</strong></h6>
-                    <input type="text" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.name" ng-value="purchase.name">
+                    <input type="text" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.name" ng-value="purchase.name" required>
                     <h6 ng-if="!purchase.edit">{{purchase.name}}</h6>
                 </div>
 
-                <div>
+                <div class="purchaseCardText">
                     <h6><strong>Description</strong></h6>
-                    <input type="text" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.description" ng-value="purchase.description">
+                    <input type="text" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.description" ng-value="purchase.description" required>
                     <h6 ng-if="!purchase.edit">{{purchase.description}}</h6>
                 </div>
 
-                <div>
+                <div class="purchaseCardText">
                     <h6><strong>Price</strong></h6>
-                    <input type="text" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.price" ng-value="purchase.price">
+                    <input type="number" min="0.01" step="0.01" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.price" ng-value="purchase.price" required>
                     <h6 ng-if="!purchase.edit">${{purchase.price}}</h6>
                 </div>
 

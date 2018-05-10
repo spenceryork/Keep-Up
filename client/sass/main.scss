@@ -1,4 +1,8 @@
 
+h1 {
+    font-family: 'Courgette', cursive;
+}
+
 .logout {
     text-decoration: none;
     color: rgb(139, 138, 138) !important;
@@ -13,19 +17,10 @@
 
 //////////////////////// OCCASIONS ////////////////////////////
 
-.noOccasionsAlert {
-        margin-left: 20px;
-        margin-top: 20px;
-        border: 2px solid black;
-}
-
-.alert {
-    margin-top: 20px !important;
-}
-
 .occasionHeader {
     h1 {
         margin: 20px 20px 0 20px;
+        font-family: 'Courgette', cursive;
     }
 }
 
@@ -33,7 +28,7 @@
     width: 95%;
     margin: 0 auto;
     .individualOccContainer {
-        width: 30%;
+        width: 40%;
         .addOccasion {
             // border: 2px solid black;  
             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -68,6 +63,10 @@
         padding: 10px;
         padding-right: 0px;
         margin-bottom: 0px;
+        font-family: 'Courgette', cursive;
+        strong {
+            font-family: 'Courgette', cursive;
+        }
     }
     a {
         text-decoration: none;
@@ -166,10 +165,12 @@ a:hover {
     margin-top: 35px;
     h4 {
         margin-left: 20px;
+        font-family: 'Courgette', cursive;
     }
 }
 
 //////////////////////// PURCHASES ////////////////////////////
+
 .purchasesHeader {
     margin: 20px;
 }
@@ -191,23 +192,67 @@ a:hover {
     }
 }
 
+.purchasesTotalAndAlert {
+    width: 90%;
+}
+
 .totalPurchases {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    width: 40%;
+    width: 75%;
     padding: 20px;
     margin-left: 75px;
     min-height: 300px;
     text-align: center;
     h2 {
         margin: 20px;
+        font-family: 'Courgette', cursive;
     }
 }
 
 .addAndTotal {
-    margin: 20px;
+    margin: 25px;
 }
 .purchaseContainer {
     .purchaseCard {
         min-height: 350px;
     }
 }
+
+.purchaseCardText {
+    h4 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: 'Courgette', cursive;
+    }
+}
+
+
+//////////////////////// HOME ////////////////////////////
+
+.homeContainer{
+    width: 100%;
+}
+.loginAndRegister {
+    width: 70%;
+    margin: 0 auto;
+    .loginContainer {
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 25px;
+        margin-top: 50px;
+        h4 {
+            margin-top: 25px;
+            font-family: 'Courgette', cursive;
+        }
+    }
+    .registrationContainer {
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+}
+
+// font-family: 'Courgette', cursive;
+// font-family: 'Philosopher', sans-serif;
+// font-family: 'Marck Script', cursive;
+// font-family: 'Glegoo', serif;

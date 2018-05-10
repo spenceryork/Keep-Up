@@ -5,12 +5,12 @@ const router = Router();
 const { addNewOccasion, getOccasions, deleteOccasion, updateOccasion, getOneOccasion } = require('../controllers/occasionsServerCtrl');
 const { getPurchases } = require('../controllers/purchasesServerCtrl');
 
-
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated())
-        return next();
-    res.redirect('/login');
-}
+//Dont think this dos anything.
+// function isLoggedIn(req, res, next) {
+//     if (req.isAuthenticated())    
+//         return next();
+//     res.redirct('/#!/home');
+// }
 
 router.post("/occasions", addNewOccasion);
 router.get("/occasions", getOccasions);

@@ -1,6 +1,49 @@
 <h1>WELCOME TO KEEP UP</h1>
 
-<button type="button" onclick="location.href = '#!/login'" class="btn btn-secondary">LOGIN</button>
-<button type="button" onclick="location.href = '#!/register'" class="btn btn-secondary">REGISTER</button>
+<!-- <button type="button" onclick="location.href = '#!/login'" class="btn btn-secondary">LOGIN</button>
+<button type="button" onclick="location.href = '#!/register'" class="btn btn-secondary">REGISTER</button> -->
 
+<div class="homeContainer">
+    <div class="loginAndRegister">
+        <div class="loginContainer">
+            <section>
+                <h4>Login</h4>
+                <div class="loginForm">
+                    Username:
+                    <input type="text" class="form-control" value="J" ng-model="userAccount.username">
+                    <!-- <br> Email: -->
+                    <!-- <input type="text" class="form-control" ng-model="userAccount.email"> -->
+                    <br> Password:
+                    <input type="text" class="form-control" value="j" ng-model="userAccount.password">
+                    <br>
+                    <button type="button" class="btn btn-secondary" ng-click="login()">LOGIN</button>
+                </div>
+                <div>
 
+                </div>
+            </section>
+            <h4>- OR -</h4>
+        </div>
+        <div class="registrationContainer">
+            <h4>Register</h4>
+            <section>
+                <div class="registerForm">
+                    First Name:
+                    <input type="text" class="form-control" ng-model="userAccount.first_name">
+                    <br> Last Name:
+                    <input type="text" class="form-control" ng-model="userAccount.last_name">
+                    <br> Username:
+                    <input type="text" class="form-control" ng-model="userAccount.username">
+                    <br> Email:
+                    <input type="text" class="form-control" ng-model="userAccount.email">
+                    <br> Password:
+                    <input type="text" class="form-control" ng-model="userAccount.password">
+                    <br> Password Confirmation:
+                    <input type="text" class="form-control" ng-model="userAccount.passwordConfirmation">
+                    <br>
+                    <button type="button" class="btn btn-secondary" ng-click="register()">Register</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

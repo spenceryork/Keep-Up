@@ -38,7 +38,7 @@ angular.module('KeepUp', ["ngRoute"]).config($routeProvider => {
         })
         .when("/home", {
             templateUrl: "partials/home.html",
-            controller: "NavCtrl"   
+            controller: "AuthCtrl"   
         })
         .when("/occasions", {
             templateUrl: "partials/occasions.html",

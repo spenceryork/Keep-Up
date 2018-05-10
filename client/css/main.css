@@ -1,3 +1,6 @@
+h1 {
+  font-family: 'Courgette', cursive; }
+
 .logout {
   text-decoration: none;
   color: #8b8a8a !important;
@@ -10,13 +13,14 @@
   text-decoration: none !important; }
 
 .occasionHeader h1 {
-  margin: 20px 20px 0 20px; }
+  margin: 20px 20px 0 20px;
+  font-family: 'Courgette', cursive; }
 
 .occasionsPageContainer {
   width: 95%;
   margin: 0 auto; }
   .occasionsPageContainer .individualOccContainer {
-    width: 30%; }
+    width: 40%; }
     .occasionsPageContainer .individualOccContainer .addOccasion {
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
       width: 100%;
@@ -41,7 +45,10 @@
   .occasionCard h6 {
     padding: 10px;
     padding-right: 0px;
-    margin-bottom: 0px; }
+    margin-bottom: 0px;
+    font-family: 'Courgette', cursive; }
+    .occasionCard h6 strong {
+      font-family: 'Courgette', cursive; }
   .occasionCard a {
     text-decoration: none; }
     .occasionCard a .fa-calendar-alt {
@@ -114,7 +121,8 @@ a:hover {
 .secondaryHeader {
   margin-top: 35px; }
   .secondaryHeader h4 {
-    margin-left: 20px; }
+    margin-left: 20px;
+    font-family: 'Courgette', cursive; }
 
 .purchasesHeader {
   margin: 20px; }
@@ -131,18 +139,46 @@ a:hover {
   .addContainer .form-control {
     margin: 0 0 10px 0; }
 
+.purchasesTotalAndAlert {
+  width: 90%; }
+
 .totalPurchases {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  width: 40%;
+  width: 75%;
   padding: 20px;
   margin-left: 75px;
   min-height: 300px;
   text-align: center; }
   .totalPurchases h2 {
-    margin: 20px; }
+    margin: 20px;
+    font-family: 'Courgette', cursive; }
 
 .addAndTotal {
-  margin: 20px; }
+  margin: 25px; }
 
 .purchaseContainer .purchaseCard {
   min-height: 350px; }
+
+.purchaseCardText h4 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Courgette', cursive; }
+
+.homeContainer {
+  width: 100%; }
+
+.loginAndRegister {
+  width: 70%;
+  margin: 0 auto; }
+  .loginAndRegister .loginContainer {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    margin-top: 50px; }
+    .loginAndRegister .loginContainer h4 {
+      margin-top: 25px;
+      font-family: 'Courgette', cursive; }
+  .loginAndRegister .registrationContainer {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 50px; }
