@@ -1,6 +1,6 @@
 <div class=occasionPage>
     <div class="occasionHeader">
-        <h1>Track Any Occasion!</h1>
+        <h1>Budget Any Occasion!</h1>
     </div>
     <div class="occasionsPageContainer d-flex flex-row">
         <div class="individualOccContainer">
@@ -12,6 +12,11 @@
             </div>
         </div>
         <div class="occasionCardContainer">
+            <div class="noOccasionsAlert" style="margin: 20px 0 25px 25px">
+                <div ng-if="!userOccasions" class="alert alert-info" role="alert">
+                    <strong>No Occasions have been added yet!</strong> Start budgeting by adding your first Occasion.
+                </div>
+            </div>
             <div class="occasionCard" ng-repeat="occasion in occasionList">
                 <a href="#!/occasions/{{occasion.id}}" class="d-flex flex-row">
                     <i class="far fa-calendar-alt fa-2x"></i>

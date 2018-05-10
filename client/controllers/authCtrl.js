@@ -21,7 +21,7 @@ angular.module("KeepUp").controller("AuthCtrl", function ($scope, $location, Aut
         console.log("scope account?", $scope.userAccount);
         AuthFactory.loginUser($scope.userAccount).then(() => {
             // console.log("logged in controller", AuthFactory.getCurrentUser());
-            $location.path("/");
+            $location.path("/occasions");
         });
     };
     

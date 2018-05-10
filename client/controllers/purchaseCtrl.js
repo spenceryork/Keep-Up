@@ -3,16 +3,18 @@
 angular.module("KeepUp").controller("PurchaseCtrl", function ($scope, PurchaseFactory, $route, $window, AuthFactory, $location) {
 
     // THIS CHECKS TO SEE IF THE USER IS LOGGED IN, IF NO USER THEY CANNOT ACCESS PAGE.
-    $scope.isLoggedIn = () => {
-        if (AuthFactory.getCurrentUser()) {
-            return true;
-        } else {
-            $location.path("/home");
-            return false;
-        }
-    };
+    // $scope.isLoggedIn = () => {
+    //     if (AuthFactory.getCurrentUser()) {
+    //         return true;
+    //     } else {
+    //         $location.path("/home");
+    //         return false;
+    //     }
+    // };
 
-    $scope.isLoggedIn();
+    // $scope.isLoggedIn();
+
+    let currentUser = null;
 
     $scope.occasion = {};
     $scope.purchase = {};
@@ -21,6 +23,8 @@ angular.module("KeepUp").controller("PurchaseCtrl", function ($scope, PurchaseFa
 
 
     $scope.$on("handleBroadcast", function (event, user) {
+        currentUser = user.id;
+
         $scope.occasion.user_id = user.id;
         $scope.purchase.user_id = user.id;
 

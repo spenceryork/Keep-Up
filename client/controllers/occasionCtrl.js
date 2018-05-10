@@ -2,17 +2,18 @@
 
 angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $location, $routeParams, OccasionFactory, AuthFactory) {
 
-    // THIS CHECKS TO SEE IF THE USER IS LOGGED IN, IF NO USER THEY CANNOT ACCESS PAGE.
-    $scope.isLoggedIn = () => {
-        if (AuthFactory.getCurrentUser()) {
-            return true;
-        } else {
-            $location.path("/home");
-            return false;
-        }
-    };
+    // THIS CHECKS TO SEE IF THE USER IS LOGGED IN, IF NO USER THEY CANNOT ACCESS PAGE. HOWEVER WHEN THE PAGE IS REFRESHED THE USER IS SENT TO THE HOME PAGE.
+    // $scope.isLoggedIn = () => {
+    //     if (AuthFactory.getCurrentUser()) {
+    //         // $location.path("/occasions")
+    //         return true;
+    //     } else {
+    //         $location.path("/home");
+    //         return false;
+    //     }
+    // };
 
-    $scope.isLoggedIn();
+    // $scope.isLoggedIn();
 
     let currentUser = null;
 
@@ -25,12 +26,25 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $l
         console.log("Active user in occasion ctrl", user.id);
     });
 
+    let anyOccasions = (occasionList) => {
+        if (occasionList) {
+            return true
+        } else {
+            return false;
+        }
+    }
     
     OccasionFactory.getUserOccasions()
     .then( occasions => {
-        $scope.occasionList = occasions.data;
+        if (occasions.data.length > 0) {
+            $scope.occasionList = occasions.data;
+            $scope.userOccasions = true;
+        } else {
+            $scope.userOccasions = false;
+        }
         // console.log("users occasionList", $scope.occasionList);
     })
+
 
     $scope.addOccasion = (occasion) => {
         OccasionFactory.postOccasion(occasion)
