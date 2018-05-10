@@ -26,14 +26,6 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $l
         console.log("Active user in occasion ctrl", user.id);
     });
 
-    let anyOccasions = (occasionList) => {
-        if (occasionList) {
-            return true
-        } else {
-            return false;
-        }
-    }
-    
     OccasionFactory.getUserOccasions()
     .then( occasions => {
         if (occasions.data.length > 0) {
@@ -42,9 +34,7 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $l
         } else {
             $scope.userOccasions = false;
         }
-        // console.log("users occasionList", $scope.occasionList);
     })
-
 
     $scope.addOccasion = (occasion) => {
         OccasionFactory.postOccasion(occasion)
@@ -53,8 +43,5 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $l
             $route.reload("/occasions");
         })
     }
-
-
-
 
 })

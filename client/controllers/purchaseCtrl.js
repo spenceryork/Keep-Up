@@ -31,19 +31,40 @@ angular.module("KeepUp").controller("PurchaseCtrl", function ($scope, PurchaseFa
         console.log("Active user in occasion ctrl", user.id);
     });
 
-    PurchaseFactory.getOccasionsAndPurchases()
-    .then(data => {
-        $scope.purchaseList = data.data.purchases;
-        $scope.occasionList = data.data.occasions;
+    let calculateTotal = (purchases) => {
         $scope.total = 0;
-        for (var i = 0; i < $scope.purchaseList.length; i++) {
-            $scope.total += $scope.purchaseList[i].price;
+        for (var i = 0; i < purchases.length; i++) {
+            $scope.total += purchases[i].price;
         }
-        if($scope.purchaseList.length > 0) {
+    }
+
+    let verifyPurchases = (purchases) => {
+        if(purchases.length > 0) {
             $scope.userPurchases = true;
         } else {
             $scope.userPurchases = false;
         }
+    }
+
+    PurchaseFactory.getOccasionsAndPurchases()
+    .then(data => {
+        $scope.purchaseList = data.data.purchases;
+        $scope.occasionList = data.data.occasions;
+        calculateTotal($scope.purchaseList)
+        verifyPurchases($scope.purchaseList)
+
+        // $scope.total = 0;
+        // for (var i = 0; i < $scope.purchaseList.length; i++) {
+        //     $scope.total += $scope.purchaseList[i].price;
+        // }
+
+
+        // if($scope.purchaseList.length > 0) {
+        //     $scope.userPurchases = true;
+        // } else {
+        //     $scope.userPurchases = false;
+        // }
+
         })
 
 

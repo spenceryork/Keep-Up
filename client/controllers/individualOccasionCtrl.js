@@ -3,7 +3,9 @@
 angular.module("KeepUp").controller("IndividualOccasionCtrl", function ($scope, OccasionFactory, $routeParams, PurchaseFactory, $route, $location) {
 
     $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="tooltip"]').tooltip({
+            trigger : 'hover'
+        })
     })
 
     let currentUser = null;
@@ -17,17 +19,39 @@ angular.module("KeepUp").controller("IndividualOccasionCtrl", function ($scope, 
         }
     });
 
+    let calculateTotal = (purchases) => {
+        $scope.total = 0;
+        for (var i = 0; i < purchases.length; i++) {
+            $scope.total += purchases[i].price;
+        }
+    }
+
+    let verifyPurchases = (purchases) => {
+        if(purchases.length > 0) {
+            $scope.userPurchases = true;
+        } else {
+            $scope.userPurchases = false;
+        }
+    }
+
     OccasionFactory.getOccasionDetails($routeParams.id)
         .then(occasion => {
             console.log("occasion", occasion);
             $scope.occasion = occasion.data;
             $scope.occasionPurchases = occasion.data[0].Purchases;
-            console.log("occasion purchases", $scope.occasionPurchases);
-            $scope.total = 0;
-            for (var i = 0; i < $scope.occasionPurchases.length; i++) {
-                $scope.total += $scope.occasionPurchases[i].price;
-            }
-            console.log("this is the total", $scope.total);
+            calculateTotal($scope.occasionPurchases)
+            verifyPurchases($scope.occasionPurchases)
+            // $scope.total = 0;
+            // for (var i = 0; i < $scope.occasionPurchases.length; i++) {
+            //     $scope.total += $scope.occasionPurchases[i].price;
+            // }
+
+            // if($scope.occasionPurchases.length > 0) {
+            //     $scope.userPurchases = true;
+            // } else {
+            //     $scope.userPurchases = false;
+            // }
+            // console.log("this is the total", $scope.total);
         })
 
     $scope.getOccasion = (index) => {
