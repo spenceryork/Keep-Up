@@ -25,12 +25,13 @@ angular.module("KeepUp").controller("AuthCtrl", function ($scope, $location, Aut
         });
     };
     
-    $scope.logout = () => {
-        console.log("user logged out", $scope.userAccount);
-        AuthFactory.logoutUser().then(() => {
+    // I CREATED THIS BUT IT DOESN'T WORK
+    // $scope.logout = () => {
+    //     console.log("user logged out", $scope.userAccount);
+    //     AuthFactory.logoutUser().then(() => {
             
-            // console.log("logged in controller", AuthFactory.getCurrentUser());
-            // $location.path("/home");
-        });  
-    }
+    //         // console.log("logged in controller", AuthFactory.getCurrentUser());
+    //         // $location.path("/home");
+    //     });  
+    // }
 })

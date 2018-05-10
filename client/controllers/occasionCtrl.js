@@ -3,9 +3,7 @@
 angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $location, $routeParams, OccasionFactory) {
 
     let currentUser = null;
-
     $scope.occasion = {};
-
     $scope.occasion.user_id = null;
 
     $scope.$on("handleBroadcast", function (event, user) {
@@ -13,6 +11,7 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $l
         $scope.occasion.user_id = user.id;
         console.log("Active user in occasion ctrl", user.id);
     });
+
     
     OccasionFactory.getUserOccasions()
     .then( occasions => {
@@ -27,18 +26,5 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $l
             $route.reload("/occasions");
         })
     }
-
-
-    // $scope.getOneOccasion = (occasion_id) => {
-    //     $location.url(`/occasions/${occasion_id}`);
-    //     OccasionFactory.getOccasionDetails(occasion_id)
-    //     .then( occastion => {
-    //         // console.log("what is the occasion", $scope.occasion);
-    //         console.log("what is the occasion_id", occasion_id);
-    //         // console.log("what is the $routeparams", $routeParams)
-    //     })
-
-    // }
-
 
 })

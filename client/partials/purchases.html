@@ -71,7 +71,7 @@
                 <div>
                     <h6><strong>Price</strong></h6>
                     <input type="text" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.price" ng-value="purchase.price">
-                    <h6 ng-if="!purchase.edit">{{purchase.price}}</h6>
+                    <h6 ng-if="!purchase.edit">${{purchase.price}}</h6>
                 </div>
 
                 <div class="occasionButtons">

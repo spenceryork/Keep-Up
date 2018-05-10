@@ -1,3 +1,7 @@
+.logout {
+  text-decoration: none;
+  color: black; }
+
 .occasionHeader h1 {
   margin: 20px 20px 0 20px; }
 
@@ -88,7 +92,7 @@ a:hover {
   width: 20%;
   padding: 10px;
   position: relative;
-  min-height: 300px; }
+  min-height: 350px; }
   .purchaseCard .occasionButtons {
     margin-top: 20px;
     padding: 10px;

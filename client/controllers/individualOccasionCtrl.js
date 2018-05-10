@@ -11,6 +11,10 @@ angular.module("KeepUp").controller("IndividualOccasionCtrl", function ($scope, 
     $scope.$on("handleBroadcast", function (event, user) {
         currentUser = user.id;
         console.log("Active user in occasion ctrl", user.id);
+        if (!currentUser) {
+            console.log("no user");
+            $location.url("/home");
+        }
     });
 
     OccasionFactory.getOccasionDetails($routeParams.id)

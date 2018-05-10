@@ -33,9 +33,9 @@ angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope) 
             return $q((resolve, reject) => {
                 $http.post("/logout").then(user => {
                     console.log("might be logged out???")
-                    console.log("currentUser", user.data)
+                    // console.log("currentUser", user.data)
                     currentUser = null;
-                    resolve(user);
+                    resolve();
                 });
             }).catch(err => {
                 reject(err);

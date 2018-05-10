@@ -78,7 +78,21 @@ module.exports.logout = (req, res, next) => {
 
 // module.exports.logout = (req, res) => {
 //     req.session.destroy(function(err) {
+//         // req.logout();
+//         // res.redirect('/')
 //         console.log("session destroyed")
 //         if (!err) res.redirect('/#!/home');
 //     });
 // };
+
+
+// ORIGINAL LOGOUT
+module.exports.logout = (req, res, next) => {
+    req.session.destroy(function (err) {
+        req.logout()
+        res.redirect("/#!/home");
+        if (err) return next(err);
+
+        res.status(200).end();
+    });
+};

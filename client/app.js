@@ -14,9 +14,6 @@ angular.module('KeepUp', ["ngRoute"]).config($routeProvider => {
             templateUrl: "partials/home.html",
             controller: "NavCtrl"   
         })
-        // when("/logout",
-        //     templateUrl: "partials/logout.html"
-        // )
         .when("/occasions", {
             templateUrl: "partials/occasions.html",
             controller: "OccasionCtrl"

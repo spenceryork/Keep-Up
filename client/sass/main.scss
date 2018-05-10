@@ -1,4 +1,9 @@
 
+.logout {
+    text-decoration: none;
+    color: black;
+}
+
 //////////////////////// OCCASIONS ////////////////////////////
 
 .occasionHeader {
@@ -125,7 +130,7 @@ a:hover {
     width: 20%;
     padding: 10px;
     position: relative;
-    min-height: 300px;
+    min-height: 350px;
     .occasionButtons {
         margin-top: 20px;
         padding: 10px;
