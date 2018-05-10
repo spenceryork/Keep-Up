@@ -1,10 +1,10 @@
 "use strict";
 
-angular.module("KeepUp").controller("PurchaseCtrl", function($scope, PurchaseFactory, $route, $window) {
+angular.module("KeepUp").controller("PurchaseCtrl", function ($scope, PurchaseFactory, $route, $window) {
 
     $scope.occasion = {};
     $scope.purchase = {};
-    
+
 
     $scope.occasion.user_id = null;
     $scope.purchase.user_id = null;
@@ -19,24 +19,26 @@ angular.module("KeepUp").controller("PurchaseCtrl", function($scope, PurchaseFac
 
 
     PurchaseFactory.getOccasionsAndPurchases()
-    .then( data => {
-        $scope.purchaseList = data.data.purchases;
-        console.log("what is purchaseList?", $scope.purchaseList)
-        $scope.occasionList = data.data.occasions;
-        console.log("what is occasionList?", $scope.occasionList)
-        // console.log("users occasionList in purchase CTRL", $scope.occasionList);
-    })
+        .then(data => {
+            $scope.purchaseList = data.data.purchases;
+            console.log("what is purchaseList?", $scope.purchaseList)
+            $scope.occasionList = data.data.occasions;
+            console.log("what is occasionList?", $scope.occasionList)
+            $scope.total = 0;
+            for (var i = 0; i < $scope.purchaseList.length; i++) {
+                $scope.total += $scope.purchaseList[i].price;
+            }
+            console.log("what is the purchase total", $scope.total);
+            // console.log("users occasionList in purchase CTRL", $scope.occasionList);
+        })
 
 
     $scope.addPurchase = (purchase) => {
         PurchaseFactory.postPurchase(purchase)
-        .then( purchase => {
-            console.log("purchase that was added to DB", purchase);
-            $window.setTimeout (function() {
-                $window.location.href = '#!/purchases';
-                // $route.reload("/purchases");
-            },800);
-        })
+            .then(purchase => {
+                console.log("purchase that was added to DB", purchase);
+                    $route.reload("/purchases");
+            })
     }
 
     $scope.getPurchase = (purchase) => {
@@ -47,19 +49,19 @@ angular.module("KeepUp").controller("PurchaseCtrl", function($scope, PurchaseFac
     $scope.updatePurchase = (purchase_id, purchase) => {
         console.log("purchase to be updated", purchase);
         PurchaseFactory.patchPurchase(purchase_id, purchase)
-        .then( purchase => {
-            // console.log("purchase was added to DB", purchase);
-            $route.reload(`/purchases`);
-        });
+            .then(purchase => {
+                // console.log("purchase was added to DB", purchase);
+                $route.reload(`/purchases`);
+            });
     }
 
     $scope.deletePurchase = (purchaseId, purchase) => {
         console.log("what is purchase", purchase, "what is purchaseID", purchaseId)
         PurchaseFactory.deletePurchase(purchaseId, purchase)
-        .then( purchase => {
-            console.log("Purchase has been deleted!", purchase);
-            $route.reload(`/purchases`)
-        })
+            .then(purchase => {
+                console.log("Purchase has been deleted!", purchase);
+                $route.reload(`/purchases`)
+            })
     }
 
     $scope.cancelEdit = () => {
