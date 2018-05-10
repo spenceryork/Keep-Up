@@ -63,9 +63,9 @@ h1 {
         padding: 10px;
         padding-right: 0px;
         margin-bottom: 0px;
-        font-family: 'Courgette', cursive;
+        font-family: 'Philosopher', sans-serif;
         strong {
-            font-family: 'Courgette', cursive;
+            font-family: 'Philosopher', sans-serif;
         }
     }
     a {
@@ -76,6 +76,7 @@ h1 {
         h6 {
             color: rgb(63, 80, 35);
             text-decoration: none;
+            font-family: 'Philosopher', sans-serif;
         }
         
     }
@@ -173,6 +174,9 @@ a:hover {
 
 .purchasesHeader {
     margin: 20px;
+    h1 {
+        font-family: 'Courgette', cursive;
+    }
 }
 
 .secondaryPurchaseHeader {
@@ -209,6 +213,12 @@ a:hover {
     }
 }
 
+.purchasesTotal {
+ h2 {
+    font-family: 'Philosopher', sans-serif !important;
+    }
+}
+
 .addAndTotal {
     margin: 25px;
 }
@@ -222,31 +232,41 @@ a:hover {
     h4 {
         text-align: center;
         margin-bottom: 20px;
-        font-family: 'Courgette', cursive;
+        font-family: 'Philosopher', sans-serif;
     }
 }
 
 
 //////////////////////// HOME ////////////////////////////
 
+.homeContainer {
+    background-image: url("../images/leaves.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .homeContainer{
     width: 100%;
 }
 .loginAndRegister {
-    width: 70%;
+    width: 35%;
     margin: 0 auto;
+    margin-right: 0;
+    // padding-top: 10px;
+    background-color: rgba(245, 241, 241, 0.75);
     .loginContainer {
-        width: 60%;
+        width: 80%;
         margin: 0 auto;
         margin-bottom: 25px;
         margin-top: 50px;
+        // padding-top: 20px;
         h4 {
             margin-top: 25px;
-            font-family: 'Courgette', cursive;
+            font-family: 'Philosopher', sans-serif;
         }
     }
     .registrationContainer {
-        width: 60%;
+        width: 80%;
         margin: 0 auto;
         margin-bottom: 50px;
     }

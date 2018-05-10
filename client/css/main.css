@@ -46,16 +46,17 @@ h1 {
     padding: 10px;
     padding-right: 0px;
     margin-bottom: 0px;
-    font-family: 'Courgette', cursive; }
+    font-family: 'Philosopher', sans-serif; }
     .occasionCard h6 strong {
-      font-family: 'Courgette', cursive; }
+      font-family: 'Philosopher', sans-serif; }
   .occasionCard a {
     text-decoration: none; }
     .occasionCard a .fa-calendar-alt {
       color: #3f5023; }
     .occasionCard a h6 {
       color: #3f5023;
-      text-decoration: none; }
+      text-decoration: none;
+      font-family: 'Philosopher', sans-serif; }
   .occasionCard .occasionTitle {
     width: 40%; }
   .occasionCard .occasionDate {
@@ -126,6 +127,8 @@ a:hover {
 
 .purchasesHeader {
   margin: 20px; }
+  .purchasesHeader h1 {
+    font-family: 'Courgette', cursive; }
 
 .secondaryPurchaseHeader {
   margin: 25px 0 0 20px; }
@@ -153,6 +156,9 @@ a:hover {
     margin: 20px;
     font-family: 'Courgette', cursive; }
 
+.purchasesTotal h2 {
+  font-family: 'Philosopher', sans-serif !important; }
+
 .addAndTotal {
   margin: 25px; }
 
@@ -162,23 +168,30 @@ a:hover {
 .purchaseCardText h4 {
   text-align: center;
   margin-bottom: 20px;
-  font-family: 'Courgette', cursive; }
+  font-family: 'Philosopher', sans-serif; }
+
+.homeContainer {
+  background-image: url("../images/leaves.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 .homeContainer {
   width: 100%; }
 
 .loginAndRegister {
-  width: 70%;
-  margin: 0 auto; }
+  width: 35%;
+  margin: 0 auto;
+  margin-right: 0;
+  background-color: rgba(245, 241, 241, 0.75); }
   .loginAndRegister .loginContainer {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     margin-bottom: 25px;
     margin-top: 50px; }
     .loginAndRegister .loginContainer h4 {
       margin-top: 25px;
-      font-family: 'Courgette', cursive; }
+      font-family: 'Philosopher', sans-serif; }
   .loginAndRegister .registrationContainer {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     margin-bottom: 50px; }
