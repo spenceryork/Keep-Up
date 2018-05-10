@@ -2,6 +2,10 @@
 
 angular.module("KeepUp").controller("IndividualOccasionCtrl", function($scope, OccasionFactory, $routeParams, PurchaseFactory, $route, $location) {
 
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+      
     let currentUser = null;
 
     $scope.$on("handleBroadcast", function (event, user) {
