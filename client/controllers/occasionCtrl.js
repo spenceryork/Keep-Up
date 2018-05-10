@@ -1,8 +1,21 @@
 "use strict";
 
-angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $location, $routeParams, OccasionFactory) {
+angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $location, $routeParams, OccasionFactory, AuthFactory) {
+
+    // THIS CHECKS TO SEE IF THE USER IS LOGGED IN, IF NO USER THEY CANNOT ACCESS PAGE.
+    $scope.isLoggedIn = () => {
+        if (AuthFactory.getCurrentUser()) {
+            return true;
+        } else {
+            $location.path("/home");
+            return false;
+        }
+    };
+
+    $scope.isLoggedIn();
 
     let currentUser = null;
+
     $scope.occasion = {};
     $scope.occasion.user_id = null;
 
@@ -26,5 +39,8 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $l
             $route.reload("/occasions");
         })
     }
+
+
+
 
 })

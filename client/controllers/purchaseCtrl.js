@@ -1,11 +1,21 @@
 "use strict";
 
-angular.module("KeepUp").controller("PurchaseCtrl", function ($scope, PurchaseFactory, $route, $window) {
+angular.module("KeepUp").controller("PurchaseCtrl", function ($scope, PurchaseFactory, $route, $window, AuthFactory, $location) {
+
+    // THIS CHECKS TO SEE IF THE USER IS LOGGED IN, IF NO USER THEY CANNOT ACCESS PAGE.
+    $scope.isLoggedIn = () => {
+        if (AuthFactory.getCurrentUser()) {
+            return true;
+        } else {
+            $location.path("/home");
+            return false;
+        }
+    };
+
+    $scope.isLoggedIn();
 
     $scope.occasion = {};
     $scope.purchase = {};
-
-
     $scope.occasion.user_id = null;
     $scope.purchase.user_id = null;
 

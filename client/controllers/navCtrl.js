@@ -1,8 +1,14 @@
 "use strict";
 
-angular.module("KeepUp").controller("NavCtrl", function ($scope, AuthFactory, $window) {
+angular.module("KeepUp").controller("NavCtrl", function ($scope, AuthFactory, $window, $location) {
+
 
     let currentUser = null;
+
+    $scope.isLoggedIn = () => {
+        if (AuthFactory.getCurrentUser()) return true;
+        else return false;
+    };
 
     $scope.$on("handleBroadcast", function (event, user) {
         currentUser = user.id;
@@ -14,10 +20,6 @@ angular.module("KeepUp").controller("NavCtrl", function ($scope, AuthFactory, $w
         }
     });
 
-    $scope.isLoggedIn = () => {
-        if (AuthFactory.getCurrentUser()) return true;
-        else return false;
-    };
 
 
 
@@ -41,15 +43,16 @@ angular.module("KeepUp").controller("NavCtrl", function ($scope, AuthFactory, $w
         // }
     ];
 
-    $scope.go = (navUrl) => {
-        console.log("navurl", navUrl);
-        if (navUrl === "#!/home") {
-            AuthFactory.logoutUser()
-                .then(data => {
-                    console.log("what is this data??", data);
-                })
-        } else {
-            $window.location.href = navUrl;
-        }
-    };
+    // NOT USED ANYMORE THANKS TO ARWA'S WORK AROUND
+    // $scope.go = (navUrl) => {
+    //     console.log("navurl", navUrl);
+    //     if (navUrl === "#!/home") {
+    //         AuthFactory.logoutUser()
+    //             .then(data => {
+    //                 console.log("what is this data??", data);
+    //             })
+    //     } else {
+    //         $window.location.href = navUrl;
+    //     }
+    // };
 })
