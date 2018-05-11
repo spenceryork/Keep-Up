@@ -2,19 +2,19 @@
 
 Keep-Up is in it's infacny stages. It is a budgeting project I started for my backend Capstone project at NSS. It allows users to track purchase for certain occasions to ensure they stay on budget. 
 
-![alt text](images/keep-up-home.png)
+![alt text](client/images/keep-up-home.png)
 
 Users can create occasions that may need a budget.
 
-![alt text](images/budget.png)
+![alt text](client/images/budget.png)
 
 Users can also track Purchases and link a Purchase to a particular Occasion.
 
-![alt text](images/purchases.png)
+![alt text](client/images/purchases.png)
 
 They can then review their budget against what they have spent for their Occasion.
 
-![alt text](images/individualOcc.png)
+![alt text](client/images/individualOcc.png)
 
 
 # Tools Used:
