@@ -1,6 +1,6 @@
 # Keep-Up
 
-Keep-Up is a budgeting project I started for my backend Capstone project at NSS. It's currently it's infacny stages. It allows users to track purchases for certain occasions to ensure they stay on budget. 
+Keep-Up is a budgeting project I started for my backend Capstone project at NSS. It's currently in its infacny stages. It allows users to track purchases for certain occasions to ensure they stay on budget. 
 
 ![alt text](client/images/keep-up-home.png)
 
