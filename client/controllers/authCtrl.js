@@ -2,16 +2,17 @@
 
 angular.module("KeepUp").controller("AuthCtrl", function ($scope, $location, AuthFactory) {
     $scope.userAccount = {};
+    $scope.newUserAccount = {};
 
     $scope.register = () => {
         $scope.errorMessage = "";
-        if ($scope.userAccount.password !== $scope.userAccount.passwordConfirmation) {
+        if ($scope.newUserAccount.password !== $scope.newUserAccount.passwordConfirmation) {
             console.log("bad match");
             $scope.errorMessage =
                 "Password and confirmation don't match. Please try again";
             return null;
         }
-        AuthFactory.createUser($scope.userAccount).then(() => {
+        AuthFactory.createUser($scope.newUserAccount).then(() => {
             $location.path("/occasions");
         });
     };

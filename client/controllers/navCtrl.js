@@ -2,9 +2,9 @@
 
 angular.module("KeepUp").controller("NavCtrl", function ($scope, AuthFactory, $window, $location) {
 
-
     let currentUser = null;
 
+    // This function is used to show/hide "logout" in the nav
     $scope.isLoggedIn = () => {
         if (AuthFactory.getCurrentUser()) return true;
         else return false;
@@ -20,9 +20,6 @@ angular.module("KeepUp").controller("NavCtrl", function ($scope, AuthFactory, $w
         }
     });
 
-
-
-
     $scope.navBar = [
         {
             name: "Occasions",
@@ -36,23 +33,6 @@ angular.module("KeepUp").controller("NavCtrl", function ($scope, AuthFactory, $w
             name: "Login",
             bang: "!",
             url: "#!/login"
-        },
-        // {
-        //     name: "Logout",
-        //     url: "#!/home"
-        // }
+        }
     ];
-
-    // NOT USED ANYMORE THANKS TO ARWA'S WORK AROUND
-    // $scope.go = (navUrl) => {
-    //     console.log("navurl", navUrl);
-    //     if (navUrl === "#!/home") {
-    //         AuthFactory.logoutUser()
-    //             .then(data => {
-    //                 console.log("what is this data??", data);
-    //             })
-    //     } else {
-    //         $window.location.href = navUrl;
-    //     }
-    // };
 })
