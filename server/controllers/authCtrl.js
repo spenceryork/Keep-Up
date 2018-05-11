@@ -68,23 +68,9 @@ module.exports.logout = (req, res, next) => {
         if (err) next(err)
         console.log("logging out????????", req.user)
         console.log("logging err", err)
-
-
-        // console.log("user", user)
-
         res.status(200).end();
     });
 };
-
-// module.exports.logout = (req, res) => {
-//     req.session.destroy(function(err) {
-//         // req.logout();
-//         // res.redirect('/')
-//         console.log("session destroyed")
-//         if (!err) res.redirect('/#!/home');
-//     });
-// };
-
 
 // ORIGINAL LOGOUT
 module.exports.logout = (req, res, next) => {

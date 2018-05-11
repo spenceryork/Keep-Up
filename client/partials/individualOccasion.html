@@ -35,17 +35,12 @@
                 <a ng-switch-default ng-click="deleteOccasion()">
                     <i class="far fa-trash-alt" data-toggle="tooltip" title="Delete"></i>
                 </a>
-
-                <!-- <button type="button" class="btn btn-secondary btn-sm" ng-switch-default ng-click="getOccasion()">EDIT</button> -->
-                <!-- <button type="button" class="btn btn-danger btn-sm" ng-switch-default ng-click="deleteOccasion()">DELETE</button> -->
                 <button type="button" class="btn btn-secondary btn-sm" ng-switch-when="edit" id="edit" ng-click="updateOccasion(occasion[0].id, occasion[0])">SUBMIT</button>
                 <button type="button" class="btn btn-light btn-sm" ng-switch-when="edit" id="edit" ng-click="cancelEdit()">CANCEL</button>
             </div>
         </div>
     </div>
 </div>
-
-
 <div class="secondaryHeader">
     <h2>{{occasion[0].title}} Purchases</h2>
 </div>

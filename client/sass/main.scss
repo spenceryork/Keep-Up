@@ -26,9 +26,7 @@ h1 {
 .occasionHeader {
     h1 {
         margin: 20px 20px 0 20px;
-        // font-family: 'Courgette', cursive;
         font-family: 'Yellowtail', cursive;
-
     }
 }
 
@@ -39,7 +37,6 @@ h1 {
     .individualOccContainer {
         width: 40%;
         .addOccasion {
-            // border: 2px solid black;  
             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             width: 100%;
             padding: 20px;
@@ -59,9 +56,7 @@ h1 {
 }
 
 .occasionCard {
-    // margin: 0 auto;
     width: 95%;
-    // border: 2px solid black;
     padding: 20px;
     text-decoration: none;
     color: grey;
@@ -86,8 +81,7 @@ h1 {
             color: black;
             text-decoration: none;
             font-family: 'Philosopher', sans-serif;
-        }
-        
+        } 
     }
     .occasionTitle {
         width: 40%;
@@ -98,7 +92,6 @@ h1 {
     .occasionBudget {
         width: 30%;
     }
-    // box-shadow: 12px 0 15px -4px rgba(99, 98, 97, 0.4);
 }
 
 a:hover {
@@ -115,7 +108,6 @@ a:hover {
 .individualHeader{
     text-align: center;
     margin: 20px 0 20px 0;
-    // font-family: 'Courgette', cursive;
     font-family: 'Yellowtail', cursive;
 
 }
@@ -124,10 +116,7 @@ a:hover {
     font-family: 'Philosopher', sans-serif ;
     strong {
         text-decoration: underline;
-        // font-family: 'Courgette', cursive;
         font-family: 'Yellowtail', cursive;
-
-
     }
     margin: 0 auto;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -183,9 +172,7 @@ a:hover {
     margin-top: 35px;
     h2 {
         margin-left: 20px;
-        // font-family: 'Courgette', cursive;
         font-family: 'Yellowtail', cursive;
-
     }
 }
 
@@ -198,7 +185,6 @@ a:hover {
 .purchasesHeader {
     margin: 20px;
     h1 {
-        // font-family: 'Courgette', cursive;
         font-family: 'Yellowtail', cursive;
 
     }
@@ -206,13 +192,13 @@ a:hover {
 
 .secondaryPurchaseHeader {
     margin: 25px 0 0 20px;
+    font-family: 'Yellowtail', cursive;
 }
 
 .addContainer {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     width: 40%;
     padding: 20px;
-    // margin: 20px;
     button {
         margin-top: 20px;
     }
@@ -234,7 +220,6 @@ a:hover {
     text-align: center;
     h2 {
         margin: 20px;
-        // font-family: 'Courgette', cursive;
         font-family: 'Philosopher', sans-serif
     }
     strong {
@@ -279,10 +264,7 @@ a:hover {
 
     }
     strong {
-        // font-family: 'Marck Script', cursive;
         font-family: 'Yellowtail', cursive;
-
-
     }
 }
 
@@ -293,14 +275,12 @@ a:hover {
     width: 35%;
     margin: 0 auto;
     margin-right: 0;
-    // padding-top: 10px;
     background-color: rgba(245, 241, 241, 0.75);
     .loginContainer {
         width: 80%;
         margin: 0 auto;
         margin-bottom: 25px;
         margin-top: 50px;
-        // padding-top: 20px;
         h4 {
             margin-top: 25px;
             font-family: 'Philosopher', sans-serif;
@@ -317,6 +297,7 @@ a:hover {
     }
 }
 
+// FONTS USED
 // font-family: 'Courgette', cursive;
 // font-family: 'Philosopher', sans-serif;
 // font-family: 'Marck Script', cursive;

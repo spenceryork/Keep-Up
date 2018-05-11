@@ -9,14 +9,10 @@ angular.module("KeepUp").controller("PurchaseCtrl", function ($scope, PurchaseFa
     $scope.occasion.user_id = null;
     $scope.purchase.user_id = null;
 
-
     $scope.$on("handleBroadcast", function (event, user) {
         currentUser = user.id;
-
         $scope.occasion.user_id = user.id;
         $scope.purchase.user_id = user.id;
-
-        console.log("Active user in occasion ctrl", user.id);
     });
 
     let calculateTotal = (purchases) => {
@@ -52,11 +48,9 @@ angular.module("KeepUp").controller("PurchaseCtrl", function ($scope, PurchaseFa
 
     $scope.getPurchase = (purchase) => {
         purchase.edit = true;
-        console.log("what is this", event.target.id)
     }
 
     $scope.updatePurchase = (purchase_id, purchase) => {
-        console.log("purchase to be updated", purchase);
         PurchaseFactory.patchPurchase(purchase_id, purchase)
             .then(purchase => {
                 $route.reload(`/purchases`);
@@ -64,10 +58,8 @@ angular.module("KeepUp").controller("PurchaseCtrl", function ($scope, PurchaseFa
     }
 
     $scope.deletePurchase = (purchaseId, purchase) => {
-        console.log("what is purchase", purchase, "what is purchaseID", purchaseId)
         PurchaseFactory.deletePurchase(purchaseId, purchase)
             .then(purchase => {
-                console.log("Purchase has been deleted!", purchase);
                 $route.reload(`/purchases`)
             })
     }

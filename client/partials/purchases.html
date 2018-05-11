@@ -45,9 +45,8 @@
         </div>
     </div>
     <div class="secondaryPurchaseHeader">
-        <h4>All Purchases</h4>
+        <h2>All Purchases</h2>
     </div>
-
     <div class="purchasesContainer d-flex flex-row flex-wrap">
         <div class="purchaseCard" ng-repeat="purchase in purchaseList">
             <div ng-switch="purchaseEditMode">
@@ -81,7 +80,6 @@
                     <input type="number" min="0.01" step="0.01" class="form-control" ng-if="purchase.edit" id="edit" ng-model="purchase.price" ng-value="purchase.price" required>
                     <h6 ng-if="!purchase.edit">${{purchase.price}}</h6>
                 </div>
-
                 <div class="occasionButtons">
                     <button type="button" class="btn btn-secondary btn-sm" ng-if="!purchase.edit" ng-click="getPurchase(purchase)" id="{{purchase.id}}">EDIT</button>
                     <button type="button" class="btn btn-danger btn-sm" ng-if="!purchase.edit" ng-click="deletePurchase(purchase.id)">DELETE</button>
