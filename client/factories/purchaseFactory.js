@@ -21,11 +21,6 @@ angular.module("KeepUp").factory("PurchaseFactory", function($http) {
         getOccasionsAndPurchases() {
             return $http.get('/purchases')
         }
-        // getOccasionsAndPurchases(purchase_id) {
-        //     return $http.get(`/purchases`)
-        // }
-        
-
     }
 
 })

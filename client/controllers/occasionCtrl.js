@@ -2,19 +2,6 @@
 
 angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $location, $routeParams, OccasionFactory, AuthFactory) {
 
-    // THIS CHECKS TO SEE IF THE USER IS LOGGED IN, IF NO USER THEY CANNOT ACCESS PAGE. HOWEVER WHEN THE PAGE IS REFRESHED THE USER IS SENT TO THE HOME PAGE.
-    // $scope.isLoggedIn = () => {
-    //     if (AuthFactory.getCurrentUser()) {
-    //         // $location.path("/occasions")
-    //         return true;
-    //     } else {
-    //         $location.path("/home");
-    //         return false;
-    //     }
-    // };
-
-    // $scope.isLoggedIn();
-
     let currentUser = null;
 
     $scope.occasion = {};
@@ -39,7 +26,6 @@ angular.module("KeepUp").controller("OccasionCtrl", function ($scope, $route, $l
     $scope.addOccasion = (occasion) => {
         OccasionFactory.postOccasion(occasion)
         .then( occasion => {
-            // console.log("occasion was added to DB", occasion);
             $route.reload("/occasions");
         })
     }

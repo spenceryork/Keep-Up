@@ -8,7 +8,6 @@ angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope, 
         createUser(userObj) {
             return $q((resolve, reject) => {
                 $http.post("/register", userObj).then(userData => {
-                    // console.log("new user added", userData);
                     currentUser = userData;
                     resolve(userData.data);
                 });
@@ -18,8 +17,6 @@ angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope, 
         },
 
         loginUser(userObj) {
-            // console.log("userObj", userObj);
-
             return $q((resolve, reject) => {
                 $http.post("/login", userObj).then(user => {
                     currentUser = user.data;
@@ -33,7 +30,6 @@ angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope, 
             return $q((resolve, reject) => {
                 $http.post("/logout").then(user => {
                     console.log("might be logged out???")
-                    // console.log("currentUser", user.data)
                     currentUser = null;
                     resolve();
                 });
@@ -51,8 +47,6 @@ angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope, 
             return $http
                 .get("/status")
                 .then(user => {
-                    // console.log("user in set user status", user);
-
                     if (user) {
                         currentUser = user.data;
                     } else {
@@ -66,7 +60,7 @@ angular.module("KeepUp").factory("AuthFactory", function($q, $http, $rootScope, 
 
         broadcastUserLogin(user) {
             if(!user.id) {
-                $location.path("/home")
+                $location.path("/")
             } else {
                 $rootScope.$broadcast("handleBroadcast", user);
             }

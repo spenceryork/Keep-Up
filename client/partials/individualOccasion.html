@@ -35,23 +35,18 @@
                 <a ng-switch-default ng-click="deleteOccasion()">
                     <i class="far fa-trash-alt" data-toggle="tooltip" title="Delete"></i>
                 </a>
-
-                <!-- <button type="button" class="btn btn-secondary btn-sm" ng-switch-default ng-click="getOccasion()">EDIT</button> -->
-                <!-- <button type="button" class="btn btn-danger btn-sm" ng-switch-default ng-click="deleteOccasion()">DELETE</button> -->
                 <button type="button" class="btn btn-secondary btn-sm" ng-switch-when="edit" id="edit" ng-click="updateOccasion(occasion[0].id, occasion[0])">SUBMIT</button>
                 <button type="button" class="btn btn-light btn-sm" ng-switch-when="edit" id="edit" ng-click="cancelEdit()">CANCEL</button>
             </div>
         </div>
     </div>
 </div>
-
-
 <div class="secondaryHeader">
     <h2>{{occasion[0].title}} Purchases</h2>
 </div>
 <div class="noPurchasesAlert" style="margin: 20px 25px 25px 25px">
     <div ng-if="!userPurchases" class="alert alert-info" role="alert">
-        <strong>No {{occasion[0].title}} Purchases have been added yet!</strong> Click on 'Purchases' to track your first Purchase.
+        <strong>No {{occasion[0].title}} Purchases have been added yet!</strong> Click on <a href="#!/purchases" class="alert-link">Purchases</a> to track your first Purchase.
     </div>
 </div>
 <div class="purchaseCardContainer d-flex flex-row flex-wrap">
